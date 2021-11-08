@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="falta las reviews">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/ReviewsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOReviews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLAddReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLAddReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Querys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Querys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLAddReviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLAddReviewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Review.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +43,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ejemplo2JDBCLucia" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../psp/pspApiJosephEscribano" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -166,6 +157,9 @@
       <workItem from="1636116668898" duration="262000" />
       <workItem from="1636117120349" duration="3575000" />
       <workItem from="1636120761006" duration="539000" />
+      <workItem from="1636361220090" duration="2267000" />
+      <workItem from="1636371528467" duration="506000" />
+      <workItem from="1636374124661" duration="2067000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>

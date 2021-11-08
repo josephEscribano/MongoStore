@@ -4,6 +4,7 @@ import dao.DAOItems;
 import dao.DBConPool;
 import dao.springJDBC.mappers.ItemRowMapper;
 import model.Item;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import utils.Querys;
 
@@ -48,7 +49,13 @@ public class SpringDAOItems implements DAOItems {
     public Item findItemByID(int id) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
         //si no devuelve nada da un error
-        return jdbcTemplate.queryForObject(Querys.SELECT_ITEM_BY_ID_QUERY, new Object[]{id},new ItemRowMapper());
+        Item item = null;
+        try{
+            item = jdbcTemplate.queryForObject(Querys.SELECT_ITEM_BY_ID_QUERY, new ItemRowMapper(),id);
+        }catch (EmptyResultDataAccessException e){
+            item = null;
+        }
+        return item;
     }
 
     @Override
