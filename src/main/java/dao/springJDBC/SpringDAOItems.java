@@ -3,13 +3,15 @@ package dao.springJDBC;
 import dao.DAOItems;
 import dao.DBConPool;
 import dao.springJDBC.mappers.ItemRowMapper;
+import lombok.extern.log4j.Log4j2;
 import model.Item;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import utils.Querys;
 
 import java.util.List;
-
+import java.util.logging.Logger;
+@Log4j2
 public class SpringDAOItems implements DAOItems {
     @Override
     public Item get(int id) {
@@ -48,12 +50,12 @@ public class SpringDAOItems implements DAOItems {
     @Override
     public Item findItemByID(int id) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
-        //si no devuelve nada da un error
+
         Item item = null;
         try{
             item = jdbcTemplate.queryForObject(Querys.SELECT_ITEM_BY_ID_QUERY, new ItemRowMapper(),id);
         }catch (EmptyResultDataAccessException e){
-            item = null;
+            log.info("No encontrado");
         }
         return item;
     }
