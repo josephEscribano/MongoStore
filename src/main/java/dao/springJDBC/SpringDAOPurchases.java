@@ -58,7 +58,7 @@ public class SpringDAOPurchases implements DAOPurchases {
     @Override
     public List<Purchase> findPurchaseByDate(Date date) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
-        //si no devuelve nada da un error
+
         return jdbcTemplate.query(Querys.SELECT_PURCHASE_BY_DATE_QUERY, new Object[]{new java.sql.Date(date.getTime())},new PurchasesMapper());
 
     }

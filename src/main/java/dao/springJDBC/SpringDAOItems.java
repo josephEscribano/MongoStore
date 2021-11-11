@@ -2,6 +2,7 @@ package dao.springJDBC;
 
 import dao.DAOItems;
 import dao.DBConPool;
+import dao.jdbcDAO.JDBCDAOItems;
 import dao.springJDBC.mappers.ItemRowMapper;
 import lombok.extern.log4j.Log4j2;
 import model.Item;
@@ -11,7 +12,7 @@ import utils.Querys;
 
 import java.util.List;
 import java.util.logging.Logger;
-@Log4j2
+
 public class SpringDAOItems implements DAOItems {
     @Override
     public Item get(int id) {
@@ -55,7 +56,7 @@ public class SpringDAOItems implements DAOItems {
         try{
             item = jdbcTemplate.queryForObject(Querys.SELECT_ITEM_BY_ID_QUERY, new ItemRowMapper(),id);
         }catch (EmptyResultDataAccessException e){
-            log.info("No encontrado");
+            Logger.getLogger(JDBCDAOItems.class.getName());
         }
         return item;
     }

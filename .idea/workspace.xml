@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLListPurchasesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLListPurchases.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/store-properties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/store-properties.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOCustomers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOPurchases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLAddReview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLAddReview.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOCustomers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOCustomers.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOItems.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +170,8 @@
       <workItem from="1636361220090" duration="2267000" />
       <workItem from="1636371528467" duration="506000" />
       <workItem from="1636374124661" duration="2806000" />
-      <workItem from="1636544220912" duration="2650000" />
+      <workItem from="1636544220912" duration="3341000" />
+      <workItem from="1636622587131" duration="2836000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -280,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636376936554</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="falta las reviews y ajustar las busquedas por id y hacer los ejercicios">
+      <created>1636547582852</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1636547582852</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +338,8 @@
     <MESSAGE value="falta las reviews" />
     <MESSAGE value="falta las reviews y ajustar las busquedas por id" />
     <MESSAGE value="falta las reviews y ajustar las busquedas por id 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="falta las reviews y ajustar las busquedas por id 2" />
+    <MESSAGE value="falta las reviews y ajustar las busquedas por id y hacer los ejercicios" />
+    <option name="LAST_COMMIT_MESSAGE" value="falta las reviews y ajustar las busquedas por id y hacer los ejercicios" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
