@@ -21,8 +21,8 @@ public class ReviewsServices {
 
     private DAOFactory dao;
 
-    public ReviewsServices(DAOFactory dao) {
-        this.dao = dao;
+    public ReviewsServices() {
+        this.dao = new DAOFactory();
     }
 
     public List<Review> getAllReviews() {
@@ -33,16 +33,15 @@ public class ReviewsServices {
     public void deleteReview(Customer customer, Review review) {
     }
 
-    public ArrayList<String> searchByItem(int id) {
-        ArrayList<String> st =  null;
-        return st;
+    public List<Review> searchByItem(int id) {
+        return dao.getDAOReviews().getReviewByItem(id);
     }
 
     public Review createReview() {
         Review rev = null;
         return rev;    }
 
-    public void addReview(Customer customer, Review review) {
-
+    public boolean addReview(Review review) {
+        return dao.getDAOReviews().save(review);
     }
 }

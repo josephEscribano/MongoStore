@@ -107,6 +107,9 @@ public class FXMLPrincipalController implements Initializable {
     private AnchorPane listPurchase;
     private FXMLListPurchasesController fxmlListPurchasesController;
 
+    private AnchorPane listReview;
+    private FXMLListReviewsController fxmlListReviewsController;
+
 
 
     public void preloadLogin() {
@@ -394,6 +397,20 @@ public class FXMLPrincipalController implements Initializable {
         }
 
     }
+    public void preloadListReview() {
+
+        try {
+            FXMLLoader loaderMenu = new FXMLLoader(
+                    getClass().getResource(
+                            "/fxml/reviews/FXMLListReview.fxml"));
+            listReview = loaderMenu.load();
+            fxmlListReviewsController = loaderMenu.getController();
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 
 
 
@@ -440,7 +457,7 @@ public class FXMLPrincipalController implements Initializable {
     }
 
     public void chargeAddReview() {
-        addReviewController.loadCustomers();
+        addReviewController.loadPurchases();
         fxRoot.setCenter(addReview);
     }
     public void chargeDeleteReview() {
@@ -488,6 +505,11 @@ public class FXMLPrincipalController implements Initializable {
         fxRoot.setCenter(findItem);
     }
 
+    public void chargeListReview() {
+        fxmlListReviewsController.load();
+        fxRoot.setCenter(listReview);
+    }
+
     /**
      * Initializes the controller class.
      */
@@ -516,6 +538,7 @@ public class FXMLPrincipalController implements Initializable {
         preloadUpdatePurchases();
         preloadFindItem();
         preloadListPurchase();
+        preloadListReview();
 
         chargeLogin();
 

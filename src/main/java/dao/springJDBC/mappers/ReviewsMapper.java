@@ -18,10 +18,10 @@ public class ReviewsMapper implements RowMapper<Review> {
 
         review = new Review(rs.getInt(1),rs.getInt(2),rs.getString(3)
                 ,rs.getString(4),new Date(rs.getDate(5).getTime()).toLocalDate()
-                ,new Purchase(rs.getInt(1)
-                ,new Customer(rs.getInt(3),rs.getString(4),rs.getString(5),rs.getString(6))
-                ,new Item(rs.getInt(7),rs.getString(8),rs.getString(9),rs.getDouble(10))
-                ,new Date(rs.getDate(2).getTime()).toLocalDate()));
+                ,new Purchase(rs.getInt(6)
+                ,new Customer(rs.getInt(8),rs.getString(9),rs.getString(10),rs.getString(11))
+                ,new Item(rs.getInt(12),rs.getString(13),rs.getString(14),rs.getDouble(15))
+                ,new Date(rs.getDate(7).getTime()).toLocalDate()));
         return review;
     }
 }

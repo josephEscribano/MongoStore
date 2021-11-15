@@ -59,7 +59,6 @@ public class JDBCDAOpurchases implements DAOPurchases {
             preparedStatement = connection.prepareStatement(Querys.SELECT_PURCHASE_IN_REVIEW_QUERY);
             preparedStatement.setInt(1,id);
             resultSet = preparedStatement.executeQuery();
-
             list = builder(resultSet);
 
         } catch (SQLException throwables) {

@@ -3,6 +3,7 @@ package dao.springJDBC;
 import dao.DAOPurchases;
 import dao.DBConPool;
 import dao.jdbcDAO.JDBCDAOItems;
+import dao.jdbcDAO.JDBCDAOpurchases;
 import dao.springJDBC.mappers.ItemRowMapper;
 import dao.springJDBC.mappers.PurchasesMapper;
 import model.Purchase;
@@ -17,6 +18,7 @@ import java.sql.Statement;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SpringDAOPurchases implements DAOPurchases {
@@ -46,7 +48,7 @@ public class SpringDAOPurchases implements DAOPurchases {
     public boolean save(Purchase purchase) {
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
-        java.util.Date date =  java.sql.Date.from(purchase.getDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+        java.util.Date date = Date.from(purchase.getDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
         boolean confirmacion = false;
         try{
             KeyHolder keyHolder = new GeneratedKeyHolder();
@@ -65,7 +67,7 @@ public class SpringDAOPurchases implements DAOPurchases {
 
             confirmacion = true;
         }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOItems.class.getName());
+            Logger.getLogger(JDBCDAOpurchases.class.getName()).log(Level.SEVERE,null,e);
         }
 
 
@@ -73,8 +75,21 @@ public class SpringDAOPurchases implements DAOPurchases {
     }
 
     @Override
-    public boolean update(Purchase t) {
-        return false;
+    public boolean update(Purchase purchase) {
+
+        boolean confirmacion = false;
+        try{
+            JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+            java.util.Date date = Date.from(purchase.getDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+            jdbcTemplate.update(Querys.UPDATE_PURCHASES_QUERY,
+                    new java.sql.Date(date.getTime()),purchase.getIdPurchase());
+            confirmacion = true;
+        }catch (EmptyResultDataAccessException e){
+            Logger.getLogger(JDBCDAOpurchases.class.getName()).log(Level.SEVERE,null,e);
+        }
+
+        return confirmacion;
+
     }
 
     @Override

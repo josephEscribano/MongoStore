@@ -15,6 +15,7 @@ import utils.Querys;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SpringDAOItems implements DAOItems {
@@ -61,8 +62,20 @@ public class SpringDAOItems implements DAOItems {
     }
 
     @Override
-    public boolean update(Item t) {
-        return false;
+    public boolean update(Item item) {
+
+        boolean confirmacion = false;
+        try{
+            JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+            jdbcTemplate.update(Querys.UPDATE_ITEM_QUERY,
+                    item.getName(),item.getCompany(),item.getPrice(),item.getIdItem());
+            confirmacion = true;
+        }catch (EmptyResultDataAccessException e){
+            Logger.getLogger(JDBCDAOItems.class.getName()).log(Level.SEVERE,null,e);
+        }
+
+        return confirmacion;
+
     }
 
     @Override

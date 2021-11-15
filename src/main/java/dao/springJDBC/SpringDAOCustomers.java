@@ -3,6 +3,7 @@ package dao.springJDBC;
 import dao.DAOCustomers;
 import dao.DBConPool;
 import dao.jdbcDAO.JDBCDAOItems;
+import dao.jdbcDAO.JDBCDAOcustomers;
 import dao.springJDBC.mappers.CustomerMapper;
 import model.Customer;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -17,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SpringDAOCustomers implements DAOCustomers {
@@ -54,7 +56,7 @@ public class SpringDAOCustomers implements DAOCustomers {
 
             confirmacion = true;
         }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOItems.class.getName());
+            Logger.getLogger(JDBCDAOcustomers.class.getName()).log(Level.SEVERE,null,e);
         }
 
 
@@ -63,19 +65,21 @@ public class SpringDAOCustomers implements DAOCustomers {
 
     @Override
     public boolean update(Customer customer) {
+        boolean confirmacion = false;
         try{
             JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
             jdbcTemplate.update(Querys.UPDATE_CUSTOMER_QUERY,
                     customer.getName(),customer.getPhone(),customer.getAddress(),customer.getIdCustomer());
+            confirmacion = true;
         }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOItems.class.getName());
+            Logger.getLogger(JDBCDAOcustomers.class.getName()).log(Level.SEVERE,null,e);
         }
 
-        return false;
+        return confirmacion;
     }
 
     @Override
-    public boolean delete(Customer t) {
+    public boolean delete(Customer customer) {
         return false;
     }
 
@@ -86,8 +90,7 @@ public class SpringDAOCustomers implements DAOCustomers {
         try {
             customer = jtm.queryForObject(Querys.SELECT_CUSTOMER_BY_ID_QUERY,new CustomerMapper(),id);
         }catch (EmptyResultDataAccessException e){
-
-            Logger.getLogger(JDBCDAOItems.class.getName());
+            Logger.getLogger(JDBCDAOcustomers.class.getName());
         }
         return customer;
     }

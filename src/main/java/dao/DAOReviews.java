@@ -15,10 +15,12 @@ import java.util.List;
 public interface DAOReviews {
 
     Review get(int id);
+
+    List<Review> getReviewByItem (int id);
      
     List<Review> getAll();
      
-    void save(Review t);
+    boolean save(Review t);
      
     void update(Review t);
      

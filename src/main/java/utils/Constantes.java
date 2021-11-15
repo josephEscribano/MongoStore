@@ -28,6 +28,11 @@ public class Constantes {
     public static final String PURCHASE_NOT_UPDATE= "Could not be updated the purchases";
 
 
+    public static final String REVIEW_ADDED = "the review has been added correctly";
+    public static final String REVIEW_NOT_ADDED = "The review could not be added";
+    public static final String REVIEW_NOT_EXIST = "there is no review for this item";
+
+
 
 
 

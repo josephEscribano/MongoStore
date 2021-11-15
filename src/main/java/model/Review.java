@@ -42,6 +42,14 @@ public class Review {
         this.purchase = purchase;
     }
 
+    public Review(int rating, String title, String description, LocalDate date, Purchase purchase) {
+        this.rating = rating;
+        this.title = title;
+        this.description = description;
+        this.date = date;
+        this.purchase = purchase;
+    }
+
     public int getIdReview() {
         return idReview;
     }
@@ -68,6 +76,14 @@ public class Review {
 
     public String getDescription() {
         return description;
+    }
+
+    public Purchase getPurchase() {
+        return purchase;
+    }
+
+    public void setPurchase(Purchase purchase) {
+        this.purchase = purchase;
     }
 
     public void setDescription(String description) {
