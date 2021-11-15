@@ -8,8 +8,12 @@ import lombok.extern.log4j.Log4j2;
 import model.Item;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import utils.Querys;
 
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -29,8 +33,31 @@ public class SpringDAOItems implements DAOItems {
     }
 
     @Override
-    public boolean save(Item t) {
-        return false;
+    public boolean save(Item item) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        boolean confirmacion = false;
+        try{
+            KeyHolder keyHolder = new GeneratedKeyHolder();
+            jdbcTemplate.update( con -> {
+                PreparedStatement preparedStatement = con
+                        .prepareStatement(Querys.INSERT_ITEM_QUERY,
+                                Statement.RETURN_GENERATED_KEYS);
+                preparedStatement.setString(1,item.getName());
+                preparedStatement.setString(2, item.getCompany());
+                preparedStatement.setDouble(3, item.getPrice());
+                return preparedStatement;
+            },keyHolder);
+
+            item.setIdItem(keyHolder.getKey().intValue());
+
+
+            confirmacion = true;
+        }catch (EmptyResultDataAccessException e){
+            Logger.getLogger(JDBCDAOItems.class.getName());
+        }
+
+
+        return confirmacion;
     }
 
     @Override

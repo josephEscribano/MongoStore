@@ -8,10 +8,14 @@ import model.Customer;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import utils.Querys;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -34,7 +38,20 @@ public class SpringDAOCustomers implements DAOCustomers {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
         boolean confirmacion = false;
         try{
-            jdbcTemplate.update(Querys.INSERT_CUSTOMER_QUERY,customer.getName(),customer.getPhone(),customer.getAddress());
+            KeyHolder keyHolder = new GeneratedKeyHolder();
+            jdbcTemplate.update( con -> {
+                PreparedStatement preparedStatement = con
+                        .prepareStatement(Querys.INSERT_CUSTOMER_QUERY,
+                                Statement.RETURN_GENERATED_KEYS);
+                preparedStatement.setString(1,customer.getName());
+                preparedStatement.setString(2, customer.getPhone());
+                preparedStatement.setString(3, customer.getAddress());
+                return preparedStatement;
+            },keyHolder);
+
+            customer.setIdCustomer(keyHolder.getKey().intValue());
+
+
             confirmacion = true;
         }catch (EmptyResultDataAccessException e){
             Logger.getLogger(JDBCDAOItems.class.getName());
@@ -45,7 +62,15 @@ public class SpringDAOCustomers implements DAOCustomers {
     }
 
     @Override
-    public boolean update(Customer t) {
+    public boolean update(Customer customer) {
+        try{
+            JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+            jdbcTemplate.update(Querys.UPDATE_CUSTOMER_QUERY,
+                    customer.getName(),customer.getPhone(),customer.getAddress(),customer.getIdCustomer());
+        }catch (EmptyResultDataAccessException e){
+            Logger.getLogger(JDBCDAOItems.class.getName());
+        }
+
         return false;
     }
 

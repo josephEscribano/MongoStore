@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLListPurchasesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLListPurchases.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOCustomers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOPurchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLAddReview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLAddReview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOCustomers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOCustomers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/FXMLPrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/FXMLPrincipalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FXMLPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/FXMLPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/reviews/FXMLAddReview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/reviews/FXMLAddReview.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +48,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../psp/pspApiJosephEscribano" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JDBC" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -171,7 +166,8 @@
       <workItem from="1636371528467" duration="506000" />
       <workItem from="1636374124661" duration="2806000" />
       <workItem from="1636544220912" duration="3341000" />
-      <workItem from="1636622587131" duration="2836000" />
+      <workItem from="1636622587131" duration="4337000" />
+      <workItem from="1636976192525" duration="5999000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -292,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636547582852</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="he hecho el add de customer">
+      <created>1636625516076</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1636625516076</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +342,8 @@
     <MESSAGE value="falta las reviews y ajustar las busquedas por id" />
     <MESSAGE value="falta las reviews y ajustar las busquedas por id 2" />
     <MESSAGE value="falta las reviews y ajustar las busquedas por id y hacer los ejercicios" />
-    <option name="LAST_COMMIT_MESSAGE" value="falta las reviews y ajustar las busquedas por id y hacer los ejercicios" />
+    <MESSAGE value="he hecho el add de customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="he hecho el add de customer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
