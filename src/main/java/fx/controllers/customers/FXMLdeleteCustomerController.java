@@ -39,7 +39,7 @@ public class FXMLdeleteCustomerController implements Initializable {
         PurchasesServices purchasesServices = new PurchasesServices();
         Customer customer = customerBox.getSelectionModel().getSelectedItem();
         if (customer != null) {
-            if (purchasesServices.getPurchasesByClientId(customer.getIdCustomer()).isEmpty()) {
+            if (purchasesServices.getPurchasesByClientId(customer.getIdCustomer()) > 0) {
                 if (cs.deleteCustomer(customer)) {
                     customerBox.getItems().remove(customer);
                 } else {

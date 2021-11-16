@@ -22,7 +22,9 @@ public interface DAOReviews {
      
     boolean save(Review t);
      
-    Review update(Review t);
+    int update(Review t);
      
-    void delete(Review t);
+    int delete(int id);
+
+    List<Review> getReviewByCustomer(int id);
 }

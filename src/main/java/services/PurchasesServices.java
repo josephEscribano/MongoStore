@@ -27,7 +27,7 @@ public class PurchasesServices {
     public PurchasesServices() {
         dao = new DAOFactory();
     }
-    public boolean updatePurchases(Purchase purchase){
+    public int updatePurchases(Purchase purchase){
         return dao.getDAOPurchases().update(purchase);
     }
     public List<Purchase> getAllPurchases() {
@@ -36,7 +36,7 @@ public class PurchasesServices {
 
 
 
-    public List<Purchase> getPurchasesByClientId(int id) {
+    public int getPurchasesByClientId(int id) {
         return dao.getDAOPurchases().searchCustomerByid(id);
     }
 
@@ -49,8 +49,13 @@ public class PurchasesServices {
         return dao.getDAOPurchases().getPurchasesByReviewId(id);
     }
 
-    public boolean deletePurchase(Purchase purchase) {
-        return dao.getDAOPurchases().delete(purchase);
+    public int deletePurchase(int id ) {
+        int confirmacion = -1;
+        //Si confirmacion es -1 quiere decir que tiene reviews asociadas.
+        if (getPurchasesByReviewId(id).isEmpty()){
+            confirmacion = dao.getDAOPurchases().delete(id);
+        }
+        return confirmacion;
      }
 
     public boolean addPurchase(Purchase purchase) {

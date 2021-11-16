@@ -1,8 +1,5 @@
 package dao;
 
-import dao.jdbcDAO.JDBCDAOItems;
-import dao.jdbcDAO.JDBCDAOcustomers;
-import dao.jdbcDAO.JDBCDAOpurchases;
 import dao.springJDBC.SpringDAOCustomers;
 import dao.springJDBC.SpringDAOItems;
 import dao.springJDBC.SpringDAOPurchases;
@@ -40,9 +37,7 @@ public class DAOFactory {
         String sourceItems;
         DAOItems dao = null;
         sourceItems = daoProps.getProperty("daoItemsSpring");
-        if (sourceItems.equals("JDBCDAOItems")){
-            dao = new JDBCDAOItems();
-        }else if (sourceItems.equals("SpringDAOItems")){
+        if (sourceItems.equals("SpringDAOItems")){
             dao = new SpringDAOItems();
         }
 
@@ -54,9 +49,7 @@ public class DAOFactory {
         String sourceCustomers;
         DAOCustomers dao = null;
         sourceCustomers = daoProps.getProperty("daoCustomersSpring");
-        if (sourceCustomers.equals("JDBCDAOcustomers")){
-            dao = new JDBCDAOcustomers();
-        }else if (sourceCustomers.equals("SpringDAOCustomers")){
+        if (sourceCustomers.equals("SpringDAOCustomers")){
             dao = new SpringDAOCustomers();
         }
 
@@ -68,9 +61,7 @@ public class DAOFactory {
         String sourcesPurchses;
         DAOPurchases dao = null;
         sourcesPurchses = daoProps.getProperty("daoPurchasesSpring");
-        if (sourcesPurchses.equals("JDBCDAOcustomers")){
-            dao = new JDBCDAOpurchases();
-        }else if (sourcesPurchses.equals("SpringDAOPurchases")){
+        if (sourcesPurchses.equals("SpringDAOPurchases")){
             dao = new SpringDAOPurchases();
         }
 

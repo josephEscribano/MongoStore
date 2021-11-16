@@ -41,9 +41,6 @@ public class FXMLAddReviewController implements Initializable {
     @FXML
     private TextArea textBox;
 
-    public void loadCustomers() {
-
-    }
 
      public void loadPurchases() {
         PurchasesServices purchasesServices = new PurchasesServices();

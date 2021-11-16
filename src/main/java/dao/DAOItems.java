@@ -20,11 +20,11 @@ public interface DAOItems {
      
     boolean save(Item t);
      
-    boolean update(Item t);
+    int update(Item t);
      
-    boolean deletePurchasesAndItem(Item t);
+    int deletePurchasesAndItem(int id);
 
-    boolean deleteItem(Item item);
+    int deleteItem(int id);
 
     Item findItemByID(int id);
 

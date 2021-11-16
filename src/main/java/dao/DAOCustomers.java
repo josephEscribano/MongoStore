@@ -21,7 +21,7 @@ public interface DAOCustomers {
      
     boolean save(Customer t);
      
-    boolean update(Customer t);
+    int update(Customer t);
      
     boolean delete(Customer t);
 

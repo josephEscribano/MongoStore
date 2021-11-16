@@ -15,7 +15,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import model.Item;
 import model.Review;
-import services.CustomersServices;
 import services.ItemsServices;
 import services.ReviewsServices;
 import utils.Constantes;
@@ -46,7 +45,7 @@ public class FXMLfindReviewController implements Initializable {
             if (!listReview.isEmpty()){
                 reviewList.getItems().setAll(listReview);
             }else{
-                alert.setContentText(Constantes.REVIEW_NOT_EXIST);
+                alert.setContentText(Constantes.REVIEW_NOT_EXIST_ITEM);
                 alert.showAndWait();
             }
         }else{

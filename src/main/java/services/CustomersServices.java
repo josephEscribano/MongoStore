@@ -23,7 +23,7 @@ public class CustomersServices {
         dao = new DAOFactory();
     }
 
-    public boolean updateCustomers(Customer customer){
+    public int updateCustomers(Customer customer){
         return dao.getDAOCustomers().update(customer);
     }
     public List<Customer> getAllCustomers()  {

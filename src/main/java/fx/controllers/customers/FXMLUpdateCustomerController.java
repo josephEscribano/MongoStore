@@ -30,7 +30,7 @@ public class FXMLUpdateCustomerController {
             customer.setName(nameBox.getText());
             customer.setPhone(phoneBox.getText());
             customer.setAddress(addressBox.getText());
-            if (customersServices.updateCustomers(customer)) {
+            if (customersServices.updateCustomers(customer) > 0) {
                 for (int i = 0; i < customerListUpdate.getItems().size(); i++) {
                     if (customerListUpdate.getItems().get(i) == customer) {
                         customerListUpdate.getItems().set(i, customer);

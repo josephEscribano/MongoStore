@@ -20,6 +20,8 @@ public class Querys {
             "from Reviews inner join (Purchases P ,Customers C,Items I) on Reviews.idPurchase = P.idPurchase and P.idCustomer = C.idCustomer and P.idItem = I.idItem";
     public static final String SELECT_REVIEW_BY_ITEM_QUERY = "select idReview,rating,title,description,Reviews.date,P.idPurchase,P.date,C.idCustomer,C.name,C.telephone,C.address,I.idItem,I.name,I.company,I.price\n" +
             "from Reviews inner join (Purchases P ,Customers C,Items I) on Reviews.idPurchase = P.idPurchase and P.idCustomer = C.idCustomer and P.idItem = I.idItem where P.idItem = ?";
+    public static final String SELECT_REVIEW_BY_CUSTOMER_QUERY = "select idReview,rating,title,description,Reviews.date,P.idPurchase,P.date,C.idCustomer,C.name,C.telephone,C.address,I.idItem,I.name,I.company,I.price\n" +
+            "from Reviews inner join (Purchases P ,Customers C,Items I) on Reviews.idPurchase = P.idPurchase and P.idCustomer = C.idCustomer and P.idItem = I.idItem where P.idCustomer = ?";
     public static final String INSERT_CUSTOMER_QUERY ="INSERT INTO Customers (name,telephone,address) values(?,?,?)";
     public static final String INSERT_PURCHASE_QUERY = "INSERT INTO Purchases (date,idCustomer,idItem) values(?,?,?)";
     public static final String INSERT_ITEM_QUERY = "INSERT INTO Items (name,company,price) values(?,?,?)";
@@ -33,5 +35,7 @@ public class Querys {
     public static final String DELETE_ITEM_QUERY = "DELETE from Items where idItem = ?";
 
 
+
     public static final String UPDATE_REVIEW_QUERY = "update Reviews set rating = ?,title = ?,description = ?,date = ? where idReview = ?";
+    public static final String DELETE_REVIEW = "delete from Reviews where idReview = ?";
 }

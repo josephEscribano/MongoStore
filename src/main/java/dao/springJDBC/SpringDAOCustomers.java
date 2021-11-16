@@ -2,8 +2,6 @@ package dao.springJDBC;
 
 import dao.DAOCustomers;
 import dao.DBConPool;
-import dao.jdbcDAO.JDBCDAOItems;
-import dao.jdbcDAO.JDBCDAOcustomers;
 import dao.springJDBC.mappers.CustomerMapper;
 import model.Customer;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -56,7 +54,7 @@ public class SpringDAOCustomers implements DAOCustomers {
 
             confirmacion = true;
         }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOcustomers.class.getName()).log(Level.SEVERE,null,e);
+            Logger.getLogger(SpringDAOCustomers.class.getName()).log(Level.SEVERE,null,e);
         }
 
 
@@ -64,18 +62,13 @@ public class SpringDAOCustomers implements DAOCustomers {
     }
 
     @Override
-    public boolean update(Customer customer) {
-        boolean confirmacion = false;
-        try{
-            JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
-            jdbcTemplate.update(Querys.UPDATE_CUSTOMER_QUERY,
-                    customer.getName(),customer.getPhone(),customer.getAddress(),customer.getIdCustomer());
-            confirmacion = true;
-        }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOcustomers.class.getName()).log(Level.SEVERE,null,e);
-        }
+    public int update(Customer customer) {
 
-        return confirmacion;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        return jdbcTemplate.update(Querys.UPDATE_CUSTOMER_QUERY,
+                customer.getName(),customer.getPhone(),customer.getAddress(),customer.getIdCustomer());
+
+
     }
 
     @Override
@@ -90,7 +83,7 @@ public class SpringDAOCustomers implements DAOCustomers {
         try {
             customer = jtm.queryForObject(Querys.SELECT_CUSTOMER_BY_ID_QUERY,new CustomerMapper(),id);
         }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOcustomers.class.getName());
+            Logger.getLogger(SpringDAOCustomers.class.getName());
         }
         return customer;
     }

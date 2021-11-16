@@ -26,7 +26,7 @@ public class ReviewsServices {
     }
 
 
-    public Review updateReview(Review review){
+    public int updateReview(Review review){
         return dao.getDAOReviews().update(review);
     }
     public List<Review> getAllReviews() {
@@ -34,7 +34,8 @@ public class ReviewsServices {
         return dao.getDAOReviews().getAll();
     }
 
-    public void deleteReview(Customer customer, Review review) {
+    public int deleteReview( int id) {
+        return dao.getDAOReviews().delete(id);
     }
 
     public List<Review> searchByItem(int id) {
@@ -47,5 +48,9 @@ public class ReviewsServices {
 
     public boolean addReview(Review review) {
         return dao.getDAOReviews().save(review);
+    }
+
+    public List<Review> searchByCustomer(int id) {
+        return dao.getDAOReviews().getReviewByCustomer(id);
     }
 }

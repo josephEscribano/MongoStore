@@ -2,11 +2,10 @@ package dao.springJDBC;
 
 import dao.DAOPurchases;
 import dao.DBConPool;
-import dao.jdbcDAO.JDBCDAOItems;
-import dao.jdbcDAO.JDBCDAOpurchases;
 import dao.springJDBC.mappers.ItemRowMapper;
 import dao.springJDBC.mappers.PurchasesMapper;
 import model.Purchase;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -30,12 +29,15 @@ public class SpringDAOPurchases implements DAOPurchases {
 
     @Override
     public List<Purchase> getPurchasesByItemId(int id) {
-        return null;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        return  jdbcTemplate.query(Querys.SELECT_PURCHASES_BY_ITEM_QUERY,new PurchasesMapper(),id);
     }
 
     @Override
     public List<Purchase> getPurchasesByReviewId(int id) {
-        return null;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        return jdbcTemplate.query(Querys.SELECT_PURCHASE_IN_REVIEW_QUERY,new PurchasesMapper(),id);
+
     }
 
     @Override
@@ -67,7 +69,7 @@ public class SpringDAOPurchases implements DAOPurchases {
 
             confirmacion = true;
         }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOpurchases.class.getName()).log(Level.SEVERE,null,e);
+            Logger.getLogger(SpringDAOPurchases.class.getName()).log(Level.SEVERE,null,e);
         }
 
 
@@ -75,32 +77,37 @@ public class SpringDAOPurchases implements DAOPurchases {
     }
 
     @Override
-    public boolean update(Purchase purchase) {
+    public int update(Purchase purchase) {
 
-        boolean confirmacion = false;
-        try{
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        java.util.Date date = Date.from(purchase.getDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+        return jdbcTemplate.update(Querys.UPDATE_PURCHASES_QUERY,
+                new java.sql.Date(date.getTime()),purchase.getIdPurchase());
+
+    }
+
+    @Override
+    public int searchCustomerByid(int id) {
+
+        return 9;
+    }
+
+    @Override
+    public int delete(int id) {
+        int res = -1;
+
+        try {
             JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
-            java.util.Date date = Date.from(purchase.getDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
-            jdbcTemplate.update(Querys.UPDATE_PURCHASES_QUERY,
-                    new java.sql.Date(date.getTime()),purchase.getIdPurchase());
-            confirmacion = true;
-        }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOpurchases.class.getName()).log(Level.SEVERE,null,e);
+            res = jdbcTemplate.update(Querys.DELETE_PURCHASE_QUERY,id);
+        }catch (DataIntegrityViolationException e){
+            res = -2;
+        }catch (Exception ex){
+            Logger.getLogger(SpringDAOPurchases.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        return confirmacion;
-
+        return res;
     }
 
-    @Override
-    public List<Purchase> searchCustomerByid(int id) {
-        return null;
-    }
 
-    @Override
-    public boolean delete(Purchase t) {
-        return false;
-    }
 
     @Override
     public List<Purchase> findPurchaseByDate(Date date) {

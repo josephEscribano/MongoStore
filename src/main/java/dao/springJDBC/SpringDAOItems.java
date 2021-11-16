@@ -2,14 +2,18 @@ package dao.springJDBC;
 
 import dao.DAOItems;
 import dao.DBConPool;
-import dao.jdbcDAO.JDBCDAOItems;
 import dao.springJDBC.mappers.ItemRowMapper;
 import lombok.extern.log4j.Log4j2;
 import model.Item;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 import utils.Querys;
 
 import java.sql.PreparedStatement;
@@ -54,7 +58,7 @@ public class SpringDAOItems implements DAOItems {
 
             confirmacion = true;
         }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOItems.class.getName());
+            Logger.getLogger(SpringDAOItems.class.getName());
         }
 
 
@@ -62,30 +66,46 @@ public class SpringDAOItems implements DAOItems {
     }
 
     @Override
-    public boolean update(Item item) {
+    public int update(Item item) {
 
-        boolean confirmacion = false;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        return jdbcTemplate.update(Querys.UPDATE_ITEM_QUERY,
+                item.getName(),item.getCompany(),item.getPrice(),item.getIdItem());
+
+    }
+
+    @Override
+    public int deletePurchasesAndItem(int id) {
+        int res = -1;
+        TransactionDefinition txDef = new DefaultTransactionDefinition();
+        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager(DBConPool.getInstance().getDataSource());
+        TransactionStatus txStatus = transactionManager.getTransaction(txDef);
+
+        try {
+            JdbcTemplate jdbcTemplate = new JdbcTemplate(transactionManager.getDataSource());
+            jdbcTemplate.update(Querys.DELETE_PURCHASES_BY_IDITEM_QUERY,id);
+            res =jdbcTemplate.update(Querys.DELETE_ITEM_QUERY,id);
+            transactionManager.commit(txStatus);
+        }catch (Exception e){
+            transactionManager.rollback(txStatus);
+            Logger.getLogger(SpringDAOItems.class.getName()).log(Level.SEVERE, null, e);
+            res = -2;
+        }
+        return res;
+    }
+
+    @Override
+    public int deleteItem(int id) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        int res = -1;
         try{
-            JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
-            jdbcTemplate.update(Querys.UPDATE_ITEM_QUERY,
-                    item.getName(),item.getCompany(),item.getPrice(),item.getIdItem());
-            confirmacion = true;
-        }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOItems.class.getName()).log(Level.SEVERE,null,e);
+            res = jdbcTemplate.update(Querys.DELETE_ITEM_QUERY,id);
+        }catch (DataIntegrityViolationException e){
+            res = -2;
+        }catch (Exception ex){
+            Logger.getLogger(SpringDAOItems.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        return confirmacion;
-
-    }
-
-    @Override
-    public boolean deletePurchasesAndItem(Item t) {
-        return false;
-    }
-
-    @Override
-    public boolean deleteItem(Item item) {
-        return false;
+        return res;
     }
 
     @Override
@@ -96,7 +116,7 @@ public class SpringDAOItems implements DAOItems {
         try{
             item = jdbcTemplate.queryForObject(Querys.SELECT_ITEM_BY_ID_QUERY, new ItemRowMapper(),id);
         }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOItems.class.getName());
+            Logger.getLogger(SpringDAOItems.class.getName());
         }
         return item;
     }

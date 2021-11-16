@@ -27,10 +27,9 @@ public interface DAOPurchases {
      
     boolean save(Purchase t);
      
-    boolean update(Purchase t);
+    int update(Purchase t);
 
-    List<Purchase> searchCustomerByid(int id );
-    boolean delete(Purchase t);
-
+    int searchCustomerByid(int id );
+    int delete(int id );
     List<Purchase> findPurchaseByDate(java.util.Date date);
 }

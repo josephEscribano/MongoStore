@@ -18,11 +18,13 @@ public class Constantes {
     public static final String SELECT_ITEM = "Select a Item";
     public static final String ITEM_NOT_EXIST = "There is no item with this id";
     public static final String ITEM_NOT_UPDATE = "Could not be updated the item";
+    public static final String ITEM_NOT_FOUND = "Item not found";
 
     public static final String PURCHASE_NOT_ADDED ="Could not be added the purchases";
     public static final String NOTICE_FIELDS = "You need to fill all fields";
     public static final String PURCHASE_NOT_EXIST = "There is no purchase with this date";
     public static final String PURCHASE_NOT_DELETED = "Could not remove the purchase";
+    public static final String PURCHASE_NOT_FOUND = "Not found";
     public static final String EXIST_REVIEW_ASSOCIATED = "There are reviews associated with this customer, it cannot be deleted";
     public static final String SELECT_PURCHASE = "You need select a purchase";
     public static final String PURCHASE_NOT_UPDATE= "Could not be updated the purchases";
@@ -30,7 +32,11 @@ public class Constantes {
 
     public static final String REVIEW_ADDED = "the review has been added correctly";
     public static final String REVIEW_NOT_ADDED = "The review could not be added";
-    public static final String REVIEW_NOT_EXIST = "there is no review for this item";
+    public static final String REVIEW_NOT_EXIST_ITEM = "there is no review for this item";
+    public static final String REVIEW_NOT_UPDATE = "Could not be update the review";
+    public static final String SELECT_REVIEW = "Select a review";
+    public static final String REVIEW_NOT_EXIST_CUSTOMER = "there is no review for this customer";
+    public static final String REVIEW_NOT_EXIST = "this customer has no reviews";
 
 
 

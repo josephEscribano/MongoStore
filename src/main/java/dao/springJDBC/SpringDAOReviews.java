@@ -2,13 +2,15 @@ package dao.springJDBC;
 
 import dao.DAOReviews;
 import dao.DBConPool;
-import dao.jdbcDAO.JDBCDAOpurchases;
+
 import dao.springJDBC.mappers.ReviewsMapper;
 import model.Review;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import utils.Constantes;
 import utils.Querys;
 
 import java.sql.PreparedStatement;
@@ -65,7 +67,7 @@ public class SpringDAOReviews implements DAOReviews {
 
             confirmacion = true;
         }catch (EmptyResultDataAccessException e){
-            Logger.getLogger(JDBCDAOpurchases.class.getName()).log(Level.SEVERE,null,e);
+            Logger.getLogger(SpringDAOReviews.class.getName()).log(Level.SEVERE,null,e);
         }
 
 
@@ -73,18 +75,32 @@ public class SpringDAOReviews implements DAOReviews {
     }
 
     @Override
-    public Review update(Review review) {
+    public int update(Review review) {
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
         java.util.Date date = Date.from(review.getDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
-        jdbcTemplate.update(Querys.UPDATE_REVIEW_QUERY,review.getRating(),review.getTitle(),review.getDescription(),new java.sql.Date(date.getTime()),review.getIdReview());
-
-        return review;
+        return jdbcTemplate.update(Querys.UPDATE_REVIEW_QUERY,review.getRating(),review.getTitle(),review.getDescription(),new java.sql.Date(date.getTime()),review.getIdReview());
 
     }
 
     @Override
-    public void delete(Review t) {
+    public int delete(int id) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        int res;
+        try{
+            res = jdbcTemplate.update(Querys.DELETE_REVIEW,id);
+        }catch (DataIntegrityViolationException e){
+            res = -1;
+        }
+
+        return res;
+
+    }
+
+    @Override
+    public List<Review> getReviewByCustomer(int id) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        return jdbcTemplate.query(Querys.SELECT_REVIEW_BY_CUSTOMER_QUERY,new ReviewsMapper(),id);
 
     }
 

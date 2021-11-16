@@ -37,19 +37,34 @@ public class FXMLDeleteController implements Initializable {
     public void deletePurchase() {
 
         Purchase p = purchaseBox.getSelectionModel().getSelectedItem();
-        PurchasesServices ps = new PurchasesServices();
+        PurchasesServices purchasesServices = new PurchasesServices();
+
         if (p != null) {
-            if (ps.getPurchasesByReviewId(p.getIdPurchase()).isEmpty()) {
-                if (ps.deletePurchase(p)) {
-                    purchaseBox.getItems().remove(p);
-                } else {
-                    alert.setContentText(Constantes.PURCHASE_NOT_DELETED);
-                    alert.showAndWait();
-                }
-            } else {
+            int resultado = purchasesServices.deletePurchase(p.getIdPurchase());
+            if (resultado > 0) {
+                purchaseBox.getItems().remove(p);
+            } else if (resultado == -2){
+                alert.setContentText(Constantes.PURCHASE_NOT_DELETED);
+                alert.showAndWait();
+            }else if (resultado == -1){
                 alert.setContentText(Constantes.EXIST_REVIEW_ASSOCIATED);
                 alert.showAndWait();
+            } else if (resultado == 0){
+                alert.setContentText(Constantes.PURCHASE_NOT_FOUND);
+                alert.showAndWait();
             }
+
+//            if (purchasesServices.getPurchasesByReviewId(p.getIdPurchase()).isEmpty()) {
+//                if (purchasesServices.deletePurchase(p.getIdPurchase()) > 0) {
+//                    purchaseBox.getItems().remove(p);
+//                } else {
+//                    alert.setContentText(Constantes.PURCHASE_NOT_DELETED);
+//                    alert.showAndWait();
+//                }
+//            } else {
+//                alert.setContentText(Constantes.EXIST_REVIEW_ASSOCIATED);
+//                alert.showAndWait();
+//            }
 
 
         } else {

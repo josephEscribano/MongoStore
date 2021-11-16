@@ -37,7 +37,7 @@ public class FXMLUpdateItemController {
             BigDecimal bigDecimal = BigDecimal.valueOf(price).setScale(2, RoundingMode.HALF_UP);
             price = bigDecimal.doubleValue();
             item.setPrice(price);
-            if (itemsServices.updateItem(item)) {
+            if (itemsServices.updateItem(item) > 0) {
                 for (int i = 0; i < lvListItems.getItems().size(); i++) {
                     if (lvListItems.getItems().get(i) == item) {
                         lvListItems.getItems().set(i, item);
