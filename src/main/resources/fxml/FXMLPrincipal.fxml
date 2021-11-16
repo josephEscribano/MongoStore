@@ -46,6 +46,8 @@
                   <MenuItem mnemonicParsing="false" onAction="#chargeListReview" text="List Reviews" />
                   <MenuItem mnemonicParsing="false" onAction="#chargeFindReview" text="Find by Item" />
                   <MenuItem mnemonicParsing="false" onAction="#chargeDeleteReview" text="Delete Review" />
+                  <MenuItem mnemonicParsing="false" onAction="#chargeUpdateReview" text="Update Review" />
+
               </items>
             </Menu>
         </menus>

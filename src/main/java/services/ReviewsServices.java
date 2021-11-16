@@ -25,6 +25,10 @@ public class ReviewsServices {
         this.dao = new DAOFactory();
     }
 
+
+    public Review updateReview(Review review){
+        return dao.getDAOReviews().update(review);
+    }
     public List<Review> getAllReviews() {
 
         return dao.getDAOReviews().getAll();

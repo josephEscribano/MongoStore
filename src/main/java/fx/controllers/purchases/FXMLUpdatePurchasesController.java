@@ -24,8 +24,6 @@ public class FXMLUpdatePurchasesController {
         Purchase purchase = purchaseList.getSelectionModel().getSelectedItem();
         if (purchase != null) {
             purchase.setDate(dateBox.getValue());
-
-
             if (purchasesServices.updatePurchases(purchase)) {
                 for (int i = 0; i < purchaseList.getItems().size(); i++) {
                     if (purchaseList.getItems().get(i) == purchase) {

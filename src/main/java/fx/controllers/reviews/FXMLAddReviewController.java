@@ -52,7 +52,7 @@ public class FXMLAddReviewController implements Initializable {
      }
 
      public void chargeRating(){
-        for (int i  = 0; i <= 10; i++){
+        for (int i  = 0; i <= 5; i++){
             ratingBox.getItems().add(i);
         }
      }

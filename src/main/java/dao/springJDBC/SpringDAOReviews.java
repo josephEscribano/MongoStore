@@ -73,7 +73,13 @@ public class SpringDAOReviews implements DAOReviews {
     }
 
     @Override
-    public void update(Review t) {
+    public Review update(Review review) {
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        java.util.Date date = Date.from(review.getDate().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+        jdbcTemplate.update(Querys.UPDATE_REVIEW_QUERY,review.getRating(),review.getTitle(),review.getDescription(),new java.sql.Date(date.getTime()),review.getIdReview());
+
+        return review;
 
     }
 

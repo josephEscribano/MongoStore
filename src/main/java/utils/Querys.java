@@ -33,4 +33,5 @@ public class Querys {
     public static final String DELETE_ITEM_QUERY = "DELETE from Items where idItem = ?";
 
 
+    public static final String UPDATE_REVIEW_QUERY = "update Reviews set rating = ?,title = ?,description = ?,date = ? where idReview = ?";
 }

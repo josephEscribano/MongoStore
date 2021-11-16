@@ -22,7 +22,7 @@ public interface DAOReviews {
      
     boolean save(Review t);
      
-    void update(Review t);
+    Review update(Review t);
      
     void delete(Review t);
 }
