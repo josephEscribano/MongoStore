@@ -2,6 +2,7 @@ package utils;
 
 
 
+
 public class Constantes {
     public static final String CUSTOMER_NOT_ADDED = "Could not be added the customer";
     public static final String CUSTOMER_NOT_DELETED = "Could not be remove the customer";
@@ -37,6 +38,7 @@ public class Constantes {
     public static final String SELECT_REVIEW = "Select a review";
     public static final String REVIEW_NOT_EXIST_CUSTOMER = "there is no review for this customer";
     public static final String REVIEW_NOT_EXIST = "this customer has no reviews";
+    public static final String EXIST_REVIEWS = "There are reviews associated with this item, it cannot be deleted";
 
 
 

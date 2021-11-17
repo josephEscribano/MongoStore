@@ -45,21 +45,25 @@ public class ItemsServices {
         return dao.getDAOItems().deleteItem(id);
     }
 
-    public int checkDelete(int id){
+    public int checkItemReviews(int id){
+        return dao.getDAOItems().checkItemReview(id);
+    }
+    public int checkDelete(int id,boolean confirm){
         int confirmacion = -5;
-        List<Purchase> list = dao.getDAOPurchases().getPurchasesByItemId(id);
-        if (list.isEmpty()){
-            confirmacion = dao.getDAOItems().deleteItem(id);
-        }else{
-            for (Purchase purchase: list){
-                if (!dao.getDAOPurchases().getPurchasesByReviewId(purchase.getIdPurchase()).isEmpty()){
-                    confirmacion = -3;
-                }
-            }
-            if (confirmacion != -3){
-                confirmacion = dao.getDAOItems().deletePurchasesAndItem(id);
-            }
+        int resultado = dao.getDAOItems().checkItemReview(id);
+        int resultadoPurchases = dao.getDAOPurchases().getPurchasesByItemId(id);
+        if (resultado > 0){
+            confirmacion = -1;
+        }else if(resultadoPurchases > 0 && !confirm){
+            confirmacion = -2;
+        }else if (resultadoPurchases > 0 && confirm){
+            confirmacion = -3;
+            dao.getDAOItems().deletePurchasesAndItem(id);
+        } else if(resultadoPurchases == 0){
+            confirmacion = -4;
+            dao.getDAOItems().deleteItem(id);
         }
+
 
         return confirmacion;
     }

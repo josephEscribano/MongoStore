@@ -30,4 +30,6 @@ public interface DAOItems {
 
 
     void closePool();
+
+    int checkItemReview(int id);
 }

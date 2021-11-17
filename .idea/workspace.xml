@@ -5,44 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="he hecho el add de customer">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOCustomers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOPurchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOReviews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOItems.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOcustomers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOpurchases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOCustomers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOPurchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOReviews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLUpdateItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLUpdateItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLUpdatePurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLUpdatePurchasesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLAddReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLAddReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLUpdateReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLUpdateReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLdeleteReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLdeleteReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLfindReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLfindReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Constantes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Querys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Querys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLUpdateReview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLUpdateReview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DAOReviews.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DAOReviews.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOCustomers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOCustomers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOItems.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOPurchases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOPurchases.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOReviews.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOReviews.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLUpdatePurchasesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLUpdatePurchasesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLAddReviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLAddReviewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLfindReviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLfindReviewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/utils/Constantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Constantes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/utils/Querys.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Querys.class" afterDir="false" />
     </list>
@@ -107,7 +82,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="main.MainFX" />
-      <module name="SpringJDBC" />
+      <module name="PrimerJavaFX" />
       <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
@@ -405,6 +380,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/main/MainFX.java</url>
           <line>50</line>
           <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/services/ItemsServices.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

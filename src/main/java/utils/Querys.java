@@ -9,9 +9,7 @@ public class Querys {
             "from Purchases inner join (Customers C,Items I) on Purchases.idCustomer = C.idCustomer and Purchases.idItem = I.idItem where date = ?";
     public static final String SELECT_PURCHASES_QUERY = "select idPurchase,date,C.idCustomer,C.name,C.telephone,C.address,I.idItem,I.name,I.company,I.price\n" +
             "from Purchases inner join (Customers C,Items I) on Purchases.idCustomer = C.idCustomer and Purchases.idItem = I.idItem";
-    public static final String SELECT_PURCHASES_BY_ITEM_QUERY = "select idPurchase,date,C.idCustomer,C.name,C.telephone,C.address,I.idItem,I.name,I.company,I.price\n" +
-            "from Purchases inner join (Customers C,Items I) on Purchases.idCustomer = C.idCustomer and Purchases.idItem = I.idItem\n" +
-            "where I.idItem = ?";
+    public static final String SELECT_PURCHASES_BY_ITEM_QUERY = "select count(idItem) from Purchases where idItem = ?";
     public static final String SELECT_PURCHASES_BY_CUSTOMER_QUERY = "select idPurchase,date,C.idCustomer,C.name,C.telephone,C.address,I.idItem,I.name,I.company,I.price\n" +
             "from Purchases inner join (Customers C,Items I) on Purchases.idCustomer = C.idCustomer and Purchases.idItem = I.idItem where C.idCustomer = ? ";
     public static final String SELECT_PURCHASE_IN_REVIEW_QUERY = "select Purchases.idPurchase,Purchases.date,C.idCustomer,C.name,C.telephone,C.address,I.idItem,I.name,I.company,I.price\n" +
@@ -27,6 +25,7 @@ public class Querys {
     public static final String INSERT_ITEM_QUERY = "INSERT INTO Items (name,company,price) values(?,?,?)";
     public static final String INSERT_REVIEW_QUERY = "INSERT INTO Reviews (rating, title, description, date, idPurchase) values(?,?,?,?,?)";
     public static final String UPDATE_CUSTOMER_QUERY = "update Customers set name = ?, telephone = ?, address = ? where idCustomer= ? ";
+    public static final String COUNT_REVIEW_BY_ITEM = "select count(Reviews.idPurchase) from Reviews join Purchases P on P.idPurchase = Reviews.idPurchase where idItem = ?";
     public static final String UPDATE_ITEM_QUERY = "update Items set name = ?, company = ?, price = ? where idItem = ?";
     public static final String UPDATE_PURCHASES_QUERY = "update Purchases set date = ? where idPurchase = ?";
     public static final String DELETE_CUSTOMER_QUERY = "DELETE from Customers where idCustomer = ?";
@@ -38,4 +37,5 @@ public class Querys {
 
     public static final String UPDATE_REVIEW_QUERY = "update Reviews set rating = ?,title = ?,description = ?,date = ? where idReview = ?";
     public static final String DELETE_REVIEW = "delete from Reviews where idReview = ?";
+
 }

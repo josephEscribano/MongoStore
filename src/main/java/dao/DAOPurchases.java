@@ -19,7 +19,7 @@ public interface DAOPurchases {
 
     Purchase get(int id);
 
-    List<Purchase> getPurchasesByItemId(int id);
+    int getPurchasesByItemId(int id);
 
     List<Purchase> getPurchasesByReviewId(int id);
      

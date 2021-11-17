@@ -28,9 +28,9 @@ public class SpringDAOPurchases implements DAOPurchases {
     }
 
     @Override
-    public List<Purchase> getPurchasesByItemId(int id) {
+    public int getPurchasesByItemId(int id) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
-        return  jdbcTemplate.query(Querys.SELECT_PURCHASES_BY_ITEM_QUERY,new PurchasesMapper(),id);
+        return  jdbcTemplate.queryForObject(Querys.SELECT_PURCHASES_BY_ITEM_QUERY,Integer.class,id);
     }
 
     @Override

@@ -40,7 +40,7 @@ public class PurchasesServices {
         return dao.getDAOPurchases().searchCustomerByid(id);
     }
 
-    public List<Purchase> getPurchasesByItemId(int id) {
+    public int getPurchasesByItemId(int id) {
 
         return dao.getDAOPurchases().getPurchasesByItemId(id);
     }

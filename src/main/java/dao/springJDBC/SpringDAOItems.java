@@ -122,9 +122,18 @@ public class SpringDAOItems implements DAOItems {
     }
 
     @Override
+    public int checkItemReview(int id) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        return jdbcTemplate.queryForObject(Querys.COUNT_REVIEW_BY_ITEM,Integer.class,id);
+
+    }
+
+    @Override
     public void closePool() {
 
     }
+
+
 
 
 }

@@ -30,26 +30,38 @@ public class FXMLDeleteItemController implements Initializable {
         ItemsServices itemsServices = new ItemsServices();
         if (it != null) {
 
-            if (!purchasesServices.getPurchasesByItemId(it.getIdItem()).isEmpty()) {
+            if ( itemsServices.checkDelete(it.getIdItem(),false) == -1){
+                alert.setContentText(Constantes.EXIST_REVIEWS);
+                alert.showAndWait();
+            }else if (itemsServices.checkDelete(it.getIdItem(),false) == -2){
                 confir.setTitle(Constantes.TITLE_MESSAGE);
                 confir.setContentText(Constantes.NOTICE_DELETED);
                 Optional<ButtonType> action = confir.showAndWait();
-                if (action.get() == ButtonType.OK) {
-                    if (itemsServices.deletePurchasesAndItem(it) > 0) {
-                        lvlistItems.getItems().remove(it);
-                    } else {
-                        alert.setContentText(Constantes.ITEM_NOT_DELETED);
-                        alert.showAndWait();
-                    }
-                }
-            } else {
-                if (itemsServices.deleteItem(it.getIdItem()) > 0) {
+                if (action.get() == ButtonType.OK){
+                    itemsServices.checkDelete(it.getIdItem(),true);
                     lvlistItems.getItems().remove(it);
-                } else {
-                    alert.setContentText(Constantes.ITEM_NOT_DELETED);
-                    alert.showAndWait();
                 }
             }
+//            if (purchasesServices.getPurchasesByItemId(it.getIdItem()) > 0) {
+//                confir.setTitle(Constantes.TITLE_MESSAGE);
+//                confir.setContentText(Constantes.NOTICE_DELETED);
+//                Optional<ButtonType> action = confir.showAndWait();
+//                if (action.get() == ButtonType.OK) {
+//                    if (itemsServices.deletePurchasesAndItem(it) > 0) {
+//                        lvlistItems.getItems().remove(it);
+//                    } else {
+//                        alert.setContentText(Constantes.ITEM_NOT_DELETED);
+//                        alert.showAndWait();
+//                    }
+//                }
+//            } else {
+//                if (itemsServices.deleteItem(it.getIdItem()) > 0) {
+//                    lvlistItems.getItems().remove(it);
+//                } else {
+//                    alert.setContentText(Constantes.ITEM_NOT_DELETED);
+//                    alert.showAndWait();
+//                }
+//            }
 
 
         } else {
