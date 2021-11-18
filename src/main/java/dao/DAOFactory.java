@@ -1,9 +1,6 @@
 package dao;
 
-import dao.springJDBC.SpringDAOCustomers;
-import dao.springJDBC.SpringDAOItems;
-import dao.springJDBC.SpringDAOPurchases;
-import dao.springJDBC.SpringDAOReviews;
+import dao.springJDBC.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -74,6 +71,17 @@ public class DAOFactory {
         sourcesPurchses = daoProps.getProperty("daoReviewsSpring");
         if (sourcesPurchses.equals("SpringDAOReviews")){
             dao = new SpringDAOReviews();
+        }
+
+        return dao;
+    }
+
+    public DAOUsers getDAOUsers(){
+        String sourcesPurchses;
+        DAOUsers dao = null;
+        sourcesPurchses = daoProps.getProperty("daoUsersSpring");
+        if (sourcesPurchses.equals("SpringDAOUsers")){
+            dao = new SpringDAOUsers();
         }
 
         return dao;

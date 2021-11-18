@@ -54,18 +54,6 @@ public class FXMLDeleteController implements Initializable {
                 alert.showAndWait();
             }
 
-//            if (purchasesServices.getPurchasesByReviewId(p.getIdPurchase()).isEmpty()) {
-//                if (purchasesServices.deletePurchase(p.getIdPurchase()) > 0) {
-//                    purchaseBox.getItems().remove(p);
-//                } else {
-//                    alert.setContentText(Constantes.PURCHASE_NOT_DELETED);
-//                    alert.showAndWait();
-//                }
-//            } else {
-//                alert.setContentText(Constantes.EXIST_REVIEW_ASSOCIATED);
-//                alert.showAndWait();
-//            }
-
 
         } else {
             alert.setContentText(Constantes.SELECT_PURCHASE);

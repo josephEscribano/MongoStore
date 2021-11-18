@@ -8,4 +8,5 @@
     <entry key="daoItemsSpring">SpringDAOItems</entry>
     <entry key="daoPurchasesSpring">SpringDAOPurchases</entry>
     <entry key="daoReviewsSpring">SpringDAOReviews</entry>
+    <entry key="daoUsersSpring">SpringDAOUsers</entry>
 </properties>

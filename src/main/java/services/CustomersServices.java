@@ -8,15 +8,15 @@ package services;
 import java.util.List;
 
 import dao.DAOFactory;
-import javafx.scene.control.Alert;
 import model.Customer;
+import model.User;
 
 /**
  *
  * @author Laura
  */
 public class CustomersServices {
-    private Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
     private DAOFactory dao;
 
     public CustomersServices(){
@@ -34,13 +34,26 @@ public class CustomersServices {
         return dao.getDAOCustomers().findCustomerByID(id);
     }
 
-    public boolean deleteCustomer(Customer customer) {
-        return dao.getDAOCustomers().delete(customer);
+    public int deleteCustomer(int id) {
+        int confirmacion = 1;
+        int tienePurchase = dao.getDAOPurchases().searchCustomerByid(id);
+
+        if (tienePurchase == 0){
+            int resultado = dao.getDAOCustomers().deleteWithUser(id);
+            if (resultado < 0){
+                confirmacion = resultado;
+            }else{
+                confirmacion = 0;
+            }
+
+        }
+
+        return confirmacion;
     }
 
-    public boolean addCustomer(Customer customer)  {
+    public boolean addCustomer(Customer customer, User user)  {
 
-        return dao.getDAOCustomers().save(customer);
+        return dao.getDAOCustomers().saveWithUser(customer,user);
 
     }
 

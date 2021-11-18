@@ -29,6 +29,9 @@ public class FXMLfindCustomerController implements Initializable {
     @FXML
     private ListView<Customer> customerList;
 
+    public void dataClear(){
+        dniBox.clear();
+    }
     public void searchById() {
         CustomersServices cs = new CustomersServices();
         Customer customer = cs.searchById(Integer.parseInt(dniBox.getText()));

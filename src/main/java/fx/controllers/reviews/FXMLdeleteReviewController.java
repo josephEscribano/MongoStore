@@ -74,7 +74,6 @@ public class FXMLdeleteReviewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //loadCustomersList();
     }
 
 }

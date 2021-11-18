@@ -19,6 +19,6 @@
         <TextField fx:id="companyBox" layoutX="427.0" layoutY="174.0" />
         <Label layoutX="428.0" layoutY="205.0" text="Price" />
         <TextField fx:id="priceBox" layoutX="427.0" layoutY="226.0" />
-        <ListView fx:id="LVlist" layoutX="25.0" layoutY="97.0" prefHeight="250.0" prefWidth="374.0" />
+        <ListView fx:id="listItems" layoutX="25.0" layoutY="97.0" prefHeight="250.0" prefWidth="374.0" />
     </children>
 </AnchorPane>

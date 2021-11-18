@@ -2,7 +2,6 @@ package dao.springJDBC;
 
 import dao.DAOPurchases;
 import dao.DBConPool;
-import dao.springJDBC.mappers.ItemRowMapper;
 import dao.springJDBC.mappers.PurchasesMapper;
 import model.Purchase;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -21,11 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SpringDAOPurchases implements DAOPurchases {
-    @Override
-    public Purchase get(int id) {
 
-        return null;
-    }
 
     @Override
     public int getPurchasesByItemId(int id) {
@@ -34,9 +29,9 @@ public class SpringDAOPurchases implements DAOPurchases {
     }
 
     @Override
-    public List<Purchase> getPurchasesByReviewId(int id) {
+    public int getPurchasesByReviewId(int id) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
-        return jdbcTemplate.query(Querys.SELECT_PURCHASE_IN_REVIEW_QUERY,new PurchasesMapper(),id);
+        return jdbcTemplate.queryForObject(Querys.SELECT_PURCHASE_IN_REVIEW_QUERY,Integer.class,id);
 
     }
 
@@ -45,6 +40,14 @@ public class SpringDAOPurchases implements DAOPurchases {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
         return jdbcTemplate.query(Querys.SELECT_PURCHASES_QUERY, new PurchasesMapper());
     }
+
+    @Override
+    public List<Purchase> getAllPurchaseForUser(int id) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+
+        return jdbcTemplate.query(Querys.SELECT_PURCHASES_BY_CUSTOMER_QUERY,new PurchasesMapper(),id);
+    }
+
 
     @Override
     public boolean save(Purchase purchase) {
@@ -88,8 +91,9 @@ public class SpringDAOPurchases implements DAOPurchases {
 
     @Override
     public int searchCustomerByid(int id) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        return jdbcTemplate.queryForObject(Querys.SELECT_PURCHASE_COUNT_CUSTOMERS,Integer.class,id);
 
-        return 9;
     }
 
     @Override

@@ -5,13 +5,14 @@
  */
 package fx.controllers;
 
-import configuration.ConfigYaml;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import services.UserService;
+import utils.Constantes;
 
 /**
  * FXML Controller class
@@ -20,7 +21,7 @@ import javafx.scene.control.TextField;
  */
 public class FXMLLoginController implements Initializable {
 
-    
+
     // Esto es para poder coger lo que pone en ese campo y meterlo en este caso en el atributo usuario
     // del controlador principal.
     @FXML
@@ -39,13 +40,17 @@ public class FXMLLoginController implements Initializable {
     
     
     public void clickLogin(){
-        if(fxUser.getText().equals(ConfigYaml.getInstance().getUser()) 
-                && passBox.getText().equals(ConfigYaml.getInstance().getPass())){
+        UserService serviceUser = new UserService();
+
+        if (serviceUser.checkUser(fxUser.getText(),passBox.getText()) >= 0){
+            int idUser = serviceUser.checkUser(fxUser.getText(),passBox.getText());
+            principal.setIdUser(idUser);
             principal.setUsername(fxUser.getText());
             principal.chargeWelcome();
         }else{
-            errorBox.setText("User or password is wrong");
+            errorBox.setText(Constantes.PASSWORD_IS_WRONG);
         }
+
         
     }
     /**
@@ -53,7 +58,6 @@ public class FXMLLoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }    
     
 }

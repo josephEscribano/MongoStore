@@ -36,11 +36,25 @@ public class SpringDAOReviews implements DAOReviews {
     }
 
     @Override
+    public List<Review> getReviewByItemByUser(int idUser, int idItem) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        return jdbcTemplate.query(Querys.SELECT_REVIEW_BY_ITEM_BY_USER_QUERY,new ReviewsMapper(),idItem,idUser);
+    }
+
+
+    @Override
     public List<Review> getAll() {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
 
 
         return jdbcTemplate.query(Querys.SELECT_REVIEW_QUERY,new ReviewsMapper());
+    }
+
+    @Override
+    public List<Review> getAllByUser(int id) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+
+        return jdbcTemplate.query(Querys.SELECT_REVIEW_BY_CUSTOMER_QUERY,new ReviewsMapper(),id);
     }
 
     @Override

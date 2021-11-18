@@ -1,6 +1,6 @@
 package fx.controllers.reviews;
 
-import javafx.event.ActionEvent;
+import fx.controllers.FXMLPrincipalController;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import model.Review;
@@ -17,6 +17,12 @@ public class FXMLUpdateReviewController implements Initializable {
     public ListView<Review> reviewList;
     public ComboBox<Integer> ratingBox;
     public TextField titleBox;
+    private FXMLPrincipalController principal;
+
+
+    public void setPrincipal(FXMLPrincipalController principal) {
+        this.principal = principal;
+    }
 
     public void showInfo() {
         Review review = reviewList.getSelectionModel().getSelectedItem();
@@ -28,6 +34,7 @@ public class FXMLUpdateReviewController implements Initializable {
     }
 
     public void chargeRating(){
+
         for (int i  = 0; i <= 5; i++){
             ratingBox.getItems().add(i);
         }
@@ -59,12 +66,19 @@ public class FXMLUpdateReviewController implements Initializable {
 
     public void loadUpdate() {
         ReviewsServices reviewsServices = new ReviewsServices();
-        reviewList.getItems().setAll(reviewsServices.getAllReviews());
+        titleBox.clear();
+        textBox.clear();
+        if (principal.getIdUser() > 0){
+            reviewList.getItems().setAll(reviewsServices.getALLReviewsByUser(principal.getIdUser()));
+        }else{
+            reviewList.getItems().setAll(reviewsServices.getAllReviews());
+        }
+
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        chargeRating();
+
     }
 
 

@@ -5,11 +5,9 @@
  */
 package services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import dao.DAOFactory;
-import model.Customer;
 import model.Review;
 
 /**
@@ -29,8 +27,14 @@ public class ReviewsServices {
     public int updateReview(Review review){
         return dao.getDAOReviews().update(review);
     }
-    public List<Review> getAllReviews() {
+    public List<Review> getALLReviewsByUser(int id){
+        return dao.getDAOReviews().getAllByUser(id);
+    }
 
+    public List<Review> getReviewsByItemByUser(int idUser,int idItem){
+        return dao.getDAOReviews().getReviewByItemByUser(idUser,idItem);
+    }
+    public List<Review> getAllReviews() {
         return dao.getDAOReviews().getAll();
     }
 
@@ -42,9 +46,6 @@ public class ReviewsServices {
         return dao.getDAOReviews().getReviewByItem(id);
     }
 
-    public Review createReview() {
-        Review rev = null;
-        return rev;    }
 
     public boolean addReview(Review review) {
         return dao.getDAOReviews().save(review);

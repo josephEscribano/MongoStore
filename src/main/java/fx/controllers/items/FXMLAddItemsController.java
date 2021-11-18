@@ -18,7 +18,7 @@ public class FXMLAddItemsController implements Initializable {
 
     private final Alert alert = new Alert(Alert.AlertType.INFORMATION);
     @FXML
-    private ListView<Item> LVlist;
+    private ListView<Item> listItems;
     @FXML
     private TextField nameBox;
     @FXML
@@ -37,7 +37,7 @@ public class FXMLAddItemsController implements Initializable {
         price = bigDecimal.doubleValue();
         Item item = new Item(name, company, price);
         if (it.save(item)) {
-            LVlist.getItems().add(item);
+            listItems.getItems().add(item);
         } else {
             alert.setContentText(Constantes.ITEM_NOT_ADDED);
             alert.showAndWait();
@@ -53,7 +53,9 @@ public class FXMLAddItemsController implements Initializable {
 
     public void loadItems() {
         ItemsServices is = new ItemsServices();
-        LVlist.getItems().clear();
-        LVlist.getItems().addAll(is.getAll());
+        nameBox.clear();
+        companyBox.clear();
+        priceBox.clear();
+        listItems.getItems().setAll(is.getAll());
     }
 }

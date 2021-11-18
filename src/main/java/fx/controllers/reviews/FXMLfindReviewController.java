@@ -8,6 +8,8 @@ package fx.controllers.reviews;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import fx.controllers.FXMLPrincipalController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -30,18 +32,32 @@ public class FXMLfindReviewController implements Initializable {
     private ListView<Review> reviewList;
     @FXML
     private ComboBox<Item> itemBox;
+    private FXMLPrincipalController principal;
+
+
+    public void setPrincipal(FXMLPrincipalController principal) {
+        this.principal = principal;
+    }
 
     public void loadItems() {
         ItemsServices itemsServices = new ItemsServices();
+        reviewList.getItems().clear();
         itemBox.getItems().setAll(itemsServices.getAll());
     }
 
     public void searchByItem() {
         ReviewsServices reviewsServices = new ReviewsServices();
+        reviewList.getItems().clear();
         Item item = itemBox.getSelectionModel().getSelectedItem();
 
         if (item != null){
-            List<Review> listReview = reviewsServices.searchByItem(item.getIdItem());
+            List<Review> listReview ;
+            if (principal.getIdUser() > 0){
+                listReview = reviewsServices.getReviewsByItemByUser(principal.getIdUser(), item.getIdItem());
+            }else{
+                listReview = reviewsServices.searchByItem(item.getIdItem());
+            }
+
             if (!listReview.isEmpty()){
                 reviewList.getItems().setAll(listReview);
             }else{
@@ -59,7 +75,6 @@ public class FXMLfindReviewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        loadItems();
     }
 
 }

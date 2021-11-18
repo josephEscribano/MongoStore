@@ -12,7 +12,9 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import model.Customer;
+import model.User;
 import services.CustomersServices;
+import services.UserService;
 import utils.Constantes;
 
 import java.net.URL;
@@ -24,6 +26,10 @@ import java.util.ResourceBundle;
 public class FXMLAddCustomerController implements Initializable {
     private final Alert alert = new Alert(AlertType.ERROR);
     @FXML
+    private TextField userName;
+    @FXML
+    private TextField userPass;
+    @FXML
     private TextField nameBox;
     @FXML
     private TextField phoneBox;
@@ -34,21 +40,40 @@ public class FXMLAddCustomerController implements Initializable {
 
     public void loadCustomersList() {
         CustomersServices cs = new CustomersServices();
+        userName.clear();
+        userPass.clear();
+        nameBox.clear();
+        phoneBox.clear();
+        addressBox.clear();
         customerList.getItems().setAll(cs.getAllCustomers());
     }
 
     public void addCustomer() {
-        CustomersServices cs = new CustomersServices();
-        String name = nameBox.getText();
-        String phone = phoneBox.getText();
-        String address = addressBox.getText();
-        Customer customer = new Customer(name, phone, address);
-        if (cs.addCustomer(customer)) {
-            customerList.getItems().add(customer);
-        } else {
-            alert.setContentText(Constantes.CUSTOMER_NOT_ADDED);
+        CustomersServices customersServices = new CustomersServices();
+        UserService userService = new UserService();
+        if (userName.getText().isEmpty() || userPass.getText().isEmpty()){
+            alert.setContentText(Constantes.USERNAME_AND_PASSWORD_PLEASE);
             alert.showAndWait();
+        }else if (userService.checkUserByName(userName.getText()) > 0){
+            alert.setContentText(Constantes.CHOSE_OTHER);
+            alert.showAndWait();
+        }else{
+            String pass = userPass.getText();
+            String username = userName.getText();
+            String name = nameBox.getText();
+            String phone = phoneBox.getText();
+            String address = addressBox.getText();
+            User user = new User(username,pass);
+
+            Customer customer = new Customer(name, phone, address);
+            if (customersServices.addCustomer(customer,user)) {
+                customerList.getItems().add(customer);
+            } else {
+                alert.setContentText(Constantes.CUSTOMER_NOT_ADDED);
+                alert.showAndWait();
+            }
         }
+
     }
 
     /**

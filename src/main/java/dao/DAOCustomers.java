@@ -6,6 +6,7 @@
 package dao;
 
 import model.Customer;
+import model.User;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.util.List;
@@ -19,11 +20,11 @@ public interface DAOCustomers {
      
     List<Customer> getAll() ;
      
-    boolean save(Customer t);
+    boolean saveWithUser(Customer customer, User user);
      
     int update(Customer t);
      
-    boolean delete(Customer t);
+    int deleteWithUser(int id);
 
     Customer findCustomerByID(int id);
 }

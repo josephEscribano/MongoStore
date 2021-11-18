@@ -1,5 +1,6 @@
 package fx.controllers.purchases;
 
+import fx.controllers.FXMLPrincipalController;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import model.Purchase;
@@ -12,6 +13,7 @@ public class FXMLListPurchasesController implements Initializable {
     public ListView<Purchase> purchasesList;
 
     public void load(){
+
         PurchasesServices purchasesServices = new PurchasesServices();
         purchasesList.getItems().setAll(purchasesServices.getAllPurchases());
     }

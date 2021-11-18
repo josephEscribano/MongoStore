@@ -19,11 +19,6 @@ public class PurchasesServices {
     private DAOFactory dao;
 
 
-    public ArrayList<Purchase> searchByDate(String date) {
-        ArrayList<Purchase> purch =  null;
-        return purch;
-    }
-
     public PurchasesServices() {
         dao = new DAOFactory();
     }
@@ -34,25 +29,17 @@ public class PurchasesServices {
         return dao.getDAOPurchases().getAll();
     }
 
-
-
-    public int getPurchasesByClientId(int id) {
-        return dao.getDAOPurchases().searchCustomerByid(id);
+    public List<Purchase> getPurchasesForUser(int id){
+        return dao.getDAOPurchases().getAllPurchaseForUser(id);
     }
-
-    public int getPurchasesByItemId(int id) {
-
-        return dao.getDAOPurchases().getPurchasesByItemId(id);
-    }
-
-    public List<Purchase> getPurchasesByReviewId(int id){
+    public int getPurchasesByReviewId(int id){
         return dao.getDAOPurchases().getPurchasesByReviewId(id);
     }
 
     public int deletePurchase(int id ) {
         int confirmacion = -1;
         //Si confirmacion es -1 quiere decir que tiene reviews asociadas.
-        if (getPurchasesByReviewId(id).isEmpty()){
+        if (getPurchasesByReviewId(id) == 0){
             confirmacion = dao.getDAOPurchases().delete(id);
         }
         return confirmacion;

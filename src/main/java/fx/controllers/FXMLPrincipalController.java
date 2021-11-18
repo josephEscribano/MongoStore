@@ -18,7 +18,9 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
@@ -30,6 +32,16 @@ import javax.xml.parsers.ParserConfigurationException;
  * @author Laura
  */
 public class FXMLPrincipalController implements Initializable {
+    @FXML
+    private MenuItem deletereviewitem;
+    @FXML
+    private MenuItem addReviews;
+    @FXML
+    private Menu items;
+    @FXML
+    private Menu customers;
+    @FXML
+    private Menu purchase;
 
     //Reference to the top menu to change its visibility when needed.
     @FXML
@@ -41,9 +53,17 @@ public class FXMLPrincipalController implements Initializable {
 
     @FXML
     private MenuBar fxMenuTop;
-
     // Get y set of the user to use it wherever we need it
     private String username;
+    private int idUser;
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
 
     public String getUsername() {
         return username;
@@ -233,7 +253,7 @@ public class FXMLPrincipalController implements Initializable {
                             "/fxml/reviews/FXMLaddReview.fxml"));
             addReview = loaderMenu.load();
             addReviewController = loaderMenu.getController();
-
+            addReviewController.setPrincipal(this);
         } catch (IOException ex) {
             Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -247,7 +267,7 @@ public class FXMLPrincipalController implements Initializable {
                             "/fxml/reviews/FXMLfindReview.fxml"));
             findReview = loaderMenu.load();
             findReviewController = loaderMenu.getController();
-
+            findReviewController.setPrincipal(this);
         } catch (IOException ex) {
             Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -408,7 +428,7 @@ public class FXMLPrincipalController implements Initializable {
                             "/fxml/reviews/FXMLListReview.fxml"));
             listReview = loaderMenu.load();
             fxmlListReviewsController = loaderMenu.getController();
-
+            fxmlListReviewsController.setPrincipal(this);
         } catch (IOException ex) {
             Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -423,7 +443,7 @@ public class FXMLPrincipalController implements Initializable {
                             "/fxml/reviews/FXMLUpdateReview.fxml"));
             updateReview = loaderMenu.load();
             fxmlUpdateReviewController = loaderMenu.getController();
-
+            fxmlUpdateReviewController.setPrincipal(this);
         } catch (IOException ex) {
             Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -438,10 +458,26 @@ public class FXMLPrincipalController implements Initializable {
     public void chargeLogin() {
         fxRoot.setCenter(login);
         fxMenuTop.setVisible(false);
+
     }
     public void chargeWelcome() {
         welcomeController.setLogin(this.getUsername());
-        fxMenuTop.setVisible(true);
+        if (this.getIdUser() == 0){
+            fxMenuTop.setVisible(true);
+            items.setVisible(true);
+            customers.setVisible(true);
+            purchase.setVisible(true);
+            deletereviewitem.setVisible(true);
+            addReviews.setVisible(false);
+        }else{
+            fxMenuTop.setVisible(true);
+            items.setVisible(false);
+            customers.setVisible(false);
+            purchase.setVisible(false);
+            deletereviewitem.setVisible(false);
+            addReviews.setVisible(true);
+        }
+
         fxRoot.setCenter(welcome);
     }
     
@@ -462,7 +498,7 @@ public class FXMLPrincipalController implements Initializable {
         fxRoot.setCenter(addCustomer);
     }
     public void chargeFindCustomer() {
-
+        findCustomerController.dataClear();
         fxRoot.setCenter(findCustomer);
     }
     public void chargeDeleteCustomer() {
@@ -520,6 +556,7 @@ public class FXMLPrincipalController implements Initializable {
         fxRoot.setCenter(listPurchase);
     }
     public void chargeFindItem() {
+        fxmlFindItemController.dataClear();
         fxRoot.setCenter(findItem);
     }
 
@@ -530,6 +567,7 @@ public class FXMLPrincipalController implements Initializable {
 
     public void chargeUpdateReview() {
         fxmlUpdateReviewController.loadUpdate();
+        fxmlUpdateReviewController.chargeRating();
         fxRoot.setCenter(updateReview);
     }
 

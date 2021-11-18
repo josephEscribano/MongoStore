@@ -48,6 +48,9 @@ public class FXMLUpdateCustomerController {
 
     public void loadItems() {
         CustomersServices customersServices = new CustomersServices();
+        nameBox.clear();
+        phoneBox.clear();
+        addressBox.clear();
         customerListUpdate.getItems().setAll(customersServices.getAllCustomers());
     }
 }

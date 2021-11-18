@@ -54,6 +54,9 @@ public class FXMLUpdateItemController {
 
     public void loadItems() {
         ItemsServices itemsServices = new ItemsServices();
+        nameBox.clear();
+        companyBox.clear();
+        priceBox.clear();
         lvListItems.getItems().setAll(itemsServices.getAll());
     }
 }

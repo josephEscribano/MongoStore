@@ -12,6 +12,9 @@ public class FXMLFindItemController {
     public TextField idBox;
     private final Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
+    public void dataClear(){
+        idBox.clear();
+    }
     public void searchById() {
         ItemsServices itemsServices = new ItemsServices();
         Item item = itemsServices.findItemByID(Integer.parseInt(idBox.getText()));

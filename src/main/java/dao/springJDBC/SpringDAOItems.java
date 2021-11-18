@@ -23,12 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SpringDAOItems implements DAOItems {
-    @Override
-    public Item get(int id) {
 
-
-        return null;
-    }
 
     @Override
     public List<Item> getAll() {
@@ -76,7 +71,7 @@ public class SpringDAOItems implements DAOItems {
 
     @Override
     public int deletePurchasesAndItem(int id) {
-        int res = -1;
+        int res;
         TransactionDefinition txDef = new DefaultTransactionDefinition();
         DataSourceTransactionManager transactionManager = new DataSourceTransactionManager(DBConPool.getInstance().getDataSource());
         TransactionStatus txStatus = transactionManager.getTransaction(txDef);
@@ -97,12 +92,13 @@ public class SpringDAOItems implements DAOItems {
     @Override
     public int deleteItem(int id) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
-        int res = -1;
+        int res ;
         try{
             res = jdbcTemplate.update(Querys.DELETE_ITEM_QUERY,id);
         }catch (DataIntegrityViolationException e){
             res = -2;
         }catch (Exception ex){
+            res = -2;
             Logger.getLogger(SpringDAOItems.class.getName()).log(Level.SEVERE, null, ex);
         }
         return res;
@@ -130,7 +126,7 @@ public class SpringDAOItems implements DAOItems {
 
     @Override
     public void closePool() {
-
+        DBConPool.getInstance().closePool();
     }
 
 

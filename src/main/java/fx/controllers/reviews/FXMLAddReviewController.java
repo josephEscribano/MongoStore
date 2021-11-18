@@ -9,6 +9,8 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import fx.controllers.FXMLPrincipalController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -32,6 +34,7 @@ import utils.Constantes;
 public class FXMLAddReviewController implements Initializable {
 
     private final Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private FXMLPrincipalController principal;
     @FXML
     private ListView<Purchase> purchaseBox;
     @FXML
@@ -41,10 +44,19 @@ public class FXMLAddReviewController implements Initializable {
     @FXML
     private TextArea textBox;
 
-
+    public void setPrincipal(FXMLPrincipalController principal) {
+        this.principal = principal;
+    }
      public void loadPurchases() {
         PurchasesServices purchasesServices = new PurchasesServices();
-        purchaseBox.getItems().setAll(purchasesServices.getAllPurchases());
+        titleBox.clear();
+        textBox.clear();
+        if (principal.getIdUser() > 0){
+            purchaseBox.getItems().setAll(purchasesServices.getPurchasesForUser(principal.getIdUser()));
+        }else{
+            purchaseBox.getItems().setAll(purchasesServices.getAllPurchases());
+        }
+
 
      }
 
@@ -61,17 +73,22 @@ public class FXMLAddReviewController implements Initializable {
         String title = titleBox.getText();
         String description = textBox.getText();
 
-        if (purchase != null && num != null && !titleBox.getText().isEmpty() && !textBox.getText().isEmpty()){
-            Review review = new Review(num,title,description, LocalDate.now(),purchase);
-            if (reviewsServices.addReview(review)){
-                alert.setContentText(Constantes.REVIEW_ADDED);
-                alert.showAndWait();
+        if (purchase != null){
+            if (num != null && !titleBox.getText().isEmpty() && !textBox.getText().isEmpty()){
+                Review review = new Review(num,title,description, LocalDate.now(),purchase);
+                if (reviewsServices.addReview(review)){
+                    alert.setContentText(Constantes.REVIEW_ADDED);
+                    alert.showAndWait();
+                }else{
+                    alert.setContentText(Constantes.REVIEW_NOT_ADDED);
+                    alert.showAndWait();
+                }
             }else{
-                alert.setContentText(Constantes.REVIEW_NOT_ADDED);
+                alert.setContentText(Constantes.NOTICE_FIELDS);
                 alert.showAndWait();
             }
         }else{
-            alert.setContentText(Constantes.NOTICE_FIELDS);
+            alert.setContentText(Constantes.SELECT_PURCHASE);
             alert.showAndWait();
         }
 

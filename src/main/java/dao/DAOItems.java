@@ -14,7 +14,6 @@ import java.util.List;
  */
 public interface DAOItems {
 
-    Item get(int id);
      
     List<Item> getAll();
      

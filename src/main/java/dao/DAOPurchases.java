@@ -17,13 +17,14 @@ import java.util.List;
  */
 public interface DAOPurchases {
 
-    Purchase get(int id);
 
     int getPurchasesByItemId(int id);
 
-    List<Purchase> getPurchasesByReviewId(int id);
+    int getPurchasesByReviewId(int id);
      
     List<Purchase> getAll();
+
+    List<Purchase> getAllPurchaseForUser(int id);
      
     boolean save(Purchase t);
      
