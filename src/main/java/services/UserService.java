@@ -1,7 +1,6 @@
 package services;
 
 import dao.DAOFactory;
-import dao.DAOUsers;
 
 public class UserService {
 

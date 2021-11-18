@@ -1,6 +1,6 @@
 package dao.springJDBC;
 
-import dao.DAOUsers;
+import dao.interfaces.DAOUsers;
 import dao.DBConPool;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;

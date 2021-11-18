@@ -1,5 +1,6 @@
 package dao;
 
+import dao.interfaces.*;
 import dao.springJDBC.*;
 
 import java.io.IOException;

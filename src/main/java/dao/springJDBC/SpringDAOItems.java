@@ -1,9 +1,8 @@
 package dao.springJDBC;
 
-import dao.DAOItems;
+import dao.interfaces.DAOItems;
 import dao.DBConPool;
 import dao.springJDBC.mappers.ItemRowMapper;
-import lombok.extern.log4j.Log4j2;
 import model.Item;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;

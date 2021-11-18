@@ -1,6 +1,6 @@
 package dao.springJDBC;
 
-import dao.DAOPurchases;
+import dao.interfaces.DAOPurchases;
 import dao.DBConPool;
 import dao.springJDBC.mappers.PurchasesMapper;
 import model.Purchase;

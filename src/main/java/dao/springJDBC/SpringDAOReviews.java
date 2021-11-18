@@ -1,6 +1,6 @@
 package dao.springJDBC;
 
-import dao.DAOReviews;
+import dao.interfaces.DAOReviews;
 import dao.DBConPool;
 
 import dao.springJDBC.mappers.ReviewsMapper;
@@ -10,7 +10,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
-import utils.Constantes;
 import utils.Querys;
 
 import java.sql.PreparedStatement;

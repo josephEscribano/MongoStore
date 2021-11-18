@@ -1,6 +1,6 @@
 package dao.springJDBC;
 
-import dao.DAOCustomers;
+import dao.interfaces.DAOCustomers;
 import dao.DBConPool;
 import dao.springJDBC.mappers.CustomerMapper;
 import model.Customer;
