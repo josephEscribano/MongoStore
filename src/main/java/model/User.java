@@ -1,30 +1,38 @@
 package model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "Users")
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
-    private int id;
+    private int idUser;
     private String name;
     private String password;
-
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public User() {
-    }
+    private Customer customerByIdUser;
 
     public User(String name, String password) {
         this.name = name;
         this.password = password;
     }
 
+    @Id
+    @Column(name = "idUser", nullable = false)
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    @Basic
+    @Column(name = "name", nullable = true, length = 200)
     public String getName() {
         return name;
     }
@@ -33,6 +41,8 @@ public class User {
         this.name = name;
     }
 
+    @Basic
+    @Column(name = "password", nullable = true, length = 200)
     public String getPassword() {
         return password;
     }
@@ -42,23 +52,24 @@ public class User {
     }
 
     @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id;
+        return idUser == user.idUser;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(idUser);
+    }
+
+    @OneToOne(mappedBy = "usersByIdCustomer")
+    public Customer getCustomersByIdUser() {
+        return customerByIdUser;
+    }
+
+    public void setCustomersByIdUser(Customer customerByIdUser) {
+        this.customerByIdUser = customerByIdUser;
     }
 }

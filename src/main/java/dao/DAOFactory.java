@@ -1,7 +1,7 @@
 package dao;
 
+import dao.hibernateDAO.*;
 import dao.interfaces.*;
-import dao.springJDBC.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -34,9 +34,9 @@ public class DAOFactory {
     public DAOItems getDAOItems(){
         String sourceItems;
         DAOItems dao = null;
-        sourceItems = daoProps.getProperty("daoItemsSpring");
-        if (sourceItems.equals("SpringDAOItems")){
-            dao = new SpringDAOItems();
+        sourceItems = daoProps.getProperty("daoItemsHibernate");
+        if (sourceItems.equals("HibernateDAOItems")){
+            dao = new HibernateDAOItems();
         }
 
 
@@ -46,9 +46,9 @@ public class DAOFactory {
     public DAOCustomers getDAOCustomers(){
         String sourceCustomers;
         DAOCustomers dao = null;
-        sourceCustomers = daoProps.getProperty("daoCustomersSpring");
-        if (sourceCustomers.equals("SpringDAOCustomers")){
-            dao = new SpringDAOCustomers();
+        sourceCustomers = daoProps.getProperty("daoCustomersHibernate");
+        if (sourceCustomers.equals("HibernateDAOCustomers")){
+            dao = new HibernateDAOCustomers();
         }
 
         return dao;
@@ -58,9 +58,9 @@ public class DAOFactory {
     public DAOPurchases getDAOPurchases(){
         String sourcesPurchses;
         DAOPurchases dao = null;
-        sourcesPurchses = daoProps.getProperty("daoPurchasesSpring");
-        if (sourcesPurchses.equals("SpringDAOPurchases")){
-            dao = new SpringDAOPurchases();
+        sourcesPurchses = daoProps.getProperty("daoPurchasesHibernate");
+        if (sourcesPurchses.equals("HibernateDAOPurchases")){
+            dao = new HibernateDAOPurchases();
         }
 
         return dao;
@@ -69,9 +69,9 @@ public class DAOFactory {
     public DAOReviews getDAOReviews(){
         String sourcesPurchses;
         DAOReviews dao = null;
-        sourcesPurchses = daoProps.getProperty("daoReviewsSpring");
-        if (sourcesPurchses.equals("SpringDAOReviews")){
-            dao = new SpringDAOReviews();
+        sourcesPurchses = daoProps.getProperty("daoReviewsHibernate");
+        if (sourcesPurchses.equals("HibernateDAOReviews")){
+            dao = new HibernateDAOReviews();
         }
 
         return dao;
@@ -80,9 +80,9 @@ public class DAOFactory {
     public DAOUsers getDAOUsers(){
         String sourcesPurchses;
         DAOUsers dao = null;
-        sourcesPurchses = daoProps.getProperty("daoUsersSpring");
-        if (sourcesPurchses.equals("SpringDAOUsers")){
-            dao = new SpringDAOUsers();
+        sourcesPurchses = daoProps.getProperty("daoUsersHibernate");
+        if (sourcesPurchses.equals("HibernateDAOUsers")){
+            dao = new HibernateDAOUsers();
         }
 
         return dao;

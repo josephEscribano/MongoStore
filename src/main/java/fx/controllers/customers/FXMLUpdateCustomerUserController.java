@@ -26,7 +26,7 @@ public class FXMLUpdateCustomerUserController {
         CustomersServices customersServices = new CustomersServices();
         Customer customer = customersServices.searchById(principal.getIdUser());
         nameBox.setText(customer.getName());
-        phoneBox.setText(customer.getPhone());
+        phoneBox.setText(customer.getTelephone());
         addressBox.setText(customer.getAddress());
     }
 
@@ -35,7 +35,7 @@ public class FXMLUpdateCustomerUserController {
         Customer customer = customersServices.searchById(principal.getIdUser());
         if (customer != null) {
             customer.setName(nameBox.getText());
-            customer.setPhone(phoneBox.getText());
+            customer.setTelephone(phoneBox.getText());
             customer.setAddress(addressBox.getText());
             if (customersServices.updateCustomers(customer) > 0) {
                 alert2.setContentText(Constantes.CUSTOMER_HAS_BEEN_UPDATE);

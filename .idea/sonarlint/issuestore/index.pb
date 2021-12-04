@@ -1,20 +1,8 @@
 
-R
-"src/main/java/dao/DBConection.java,7\3\7310350038574562a9ffd27b510b770ac9f618f5
 P
  src/main/java/dao/DBConPool.java,c\4\c4a7b0fc77b28c84c415d135c33049a93cae0149
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 g
 7src/main/java/dao/springJDBC/mappers/ItemRowMapper.java,1\6\16439fbc32cd907794b7270681b42ab7a39e782c
-C
-config/settings.xml,6\1\61eddf4129eafa1044e328562ddb50b333f01ec7
-K
-config/store-properties.xml,c\6\c6a763b13a369716e996ef5eb5a0ccd33adc94f0
-Q
-!src/main/java/model/Customer.java,d\8\d809aaf69069b4e367322db0008755f08edcc9a2
-O
-src/main/java/model/Review.java,7\b\7bb951e4cc17946bec61d495a2a1b264f058b4e3
 g
 7src/main/java/dao/springJDBC/mappers/ReviewsMapper.java,5\1\513a1077cec1638f1bb8745f0ea472c93617f114
 i

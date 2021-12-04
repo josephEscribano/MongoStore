@@ -11,10 +11,6 @@ import dao.DAOFactory;
 import model.Item;
 import model.Purchase;
 
-/**
- *
- * @author dam2
- */
 public class ItemsServices {
 
     private DAOFactory dao;
@@ -71,7 +67,4 @@ public class ItemsServices {
         return dao.getDAOItems().findItemByID(id);
     }
 
-    public void closePool(){
-        dao.getDAOItems().closePool();
-    }
 }

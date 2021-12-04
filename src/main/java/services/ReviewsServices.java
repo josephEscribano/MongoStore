@@ -9,11 +9,6 @@ import java.util.List;
 
 import dao.DAOFactory;
 import model.Review;
-
-/**
- *
- * @author Laura
- */
 public class ReviewsServices {
 
 

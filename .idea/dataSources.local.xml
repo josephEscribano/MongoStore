@@ -25,10 +25,7 @@
       <user-name>root</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema">
-            <name qname="josephescribano-store" />
-            <name qname="josephescribano-tvcompany" />
-          </node>
+          <node kind="schema" qname="josephescribano-store" />
         </introspection-scope>
       </schema-mapping>
     </data-source>

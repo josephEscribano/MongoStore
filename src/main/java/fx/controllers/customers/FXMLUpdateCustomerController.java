@@ -22,7 +22,7 @@ public class FXMLUpdateCustomerController {
         Customer customer = customerListUpdate.getSelectionModel().getSelectedItem();
         if (customer != null) {
             nameBox.setText(customer.getName());
-            phoneBox.setText(customer.getPhone());
+            phoneBox.setText(customer.getTelephone());
             addressBox.setText(customer.getAddress());
         }
     }
@@ -32,7 +32,7 @@ public class FXMLUpdateCustomerController {
         Customer customer = customerListUpdate.getSelectionModel().getSelectedItem();
         if (customer != null) {
             customer.setName(nameBox.getText());
-            customer.setPhone(phoneBox.getText());
+            customer.setTelephone(phoneBox.getText());
             customer.setAddress(addressBox.getText());
             if (customersServices.updateCustomers(customer) > 0) {
                 for (int i = 0; i < customerListUpdate.getItems().size(); i++) {

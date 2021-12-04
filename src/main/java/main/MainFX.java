@@ -18,43 +18,21 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import services.ItemsServices;
 
-/**
- *
- * @author Laura
- */
 public class MainFX extends Application {
-
-    @Override
-    public void stop() throws Exception {
-        super.stop();
-        ItemsServices itemsServices = new ItemsServices();
-        itemsServices.closePool();
-    }
 
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader loaderMenu = new FXMLLoader(
                 getClass().getResource("/fxml/FXMLPrincipal.fxml"));
         BorderPane root = loaderMenu.load();
-        
-
-
         Scene scene = new Scene(root);
-//        scene.getStylesheets().add("css/fxmlScene.css");
         primaryStage.setTitle("Web store");
         primaryStage.setScene(scene);
         primaryStage.show();
         //para no poder maximizar pantalla y
         primaryStage.setResizable(false);
-
-
-
-
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }

@@ -1,4 +1,4 @@
-package dao.springJDBC.mappers;
+package dao.mappers;
 
 import model.Customer;
 import model.Item;

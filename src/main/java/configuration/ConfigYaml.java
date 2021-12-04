@@ -14,10 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.yaml.snakeyaml.Yaml;
 
-/**
- *
- * @author Laura
- */
+
 public class ConfigYaml {
     
     private String User;

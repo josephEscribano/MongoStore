@@ -1,45 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Objects;
 
-/**
- *
- * @author Laura
- */
+@Entity
+@Table(name = "Purchases")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Purchase {
-
     private int idPurchase;
-    private Customer customer;
-    private Item item;
     private LocalDate date;
+    private Customer customerByIdCustomer;
+    private Item itemByIdItem;
+    private List<Review> reviewByIdPurchase;
 
-
-    private static int aumento;
-
-    public Purchase() {
-        //this.idPurchase = aumento++;
-    }
-
-    public Purchase(int idPurchase, Customer customer, Item item, LocalDate date) {
+    public Purchase(int idPurchase, Customer customerByIdCustomer, Item itemByIdItem, LocalDate date) {
         this.idPurchase = idPurchase;
-        this.customer = customer;
-        this.item = item;
         this.date = date;
+        this.customerByIdCustomer = customerByIdCustomer;
+        this.itemByIdItem = itemByIdItem;
     }
 
-    public Purchase(Customer customer, Item item, LocalDate date) {
-        //this.idPurchase = aumento++;
-        this.customer = customer;
-        this.item = item;
+    public Purchase( Customer customerByIdCustomer, Item itemByIdItem,LocalDate date) {
         this.date = date;
+        this.customerByIdCustomer = customerByIdCustomer;
+        this.itemByIdItem = itemByIdItem;
     }
 
+    @Id
+    @Column(name = "idPurchase", nullable = false)
     public int getIdPurchase() {
         return idPurchase;
     }
@@ -48,22 +42,8 @@ public class Purchase {
         this.idPurchase = idPurchase;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
+    @Basic
+    @Column(name = "date", nullable = false)
     public LocalDate getDate() {
         return date;
     }
@@ -73,40 +53,49 @@ public class Purchase {
     }
 
     @Override
-    public String toString() {
-        return "ID: " + idPurchase + "  Customer: " + customer.getIdCustomer() + "  Item: " + item.getIdItem() + "  Date: " + date;
-    }
-    
-    public String toStringForClientInfo() {
-        return "ID: " + idPurchase + "  Item: " + item.getIdItem()+ "  Date: " + date + "\n";
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Purchase purchase = (Purchase) o;
+        return idPurchase == purchase.idPurchase;
     }
 
-    public String toStringTexto() {
-        return idPurchase + ";" + customer.getIdCustomer() + ";" + item.getIdItem() + ";" + date;
+    @Override
+    public String toString() {
+        return "ID: " + idPurchase + "  Customer: " + customerByIdCustomer.getIdCustomer() + "  Item: " + itemByIdItem.getIdItem() + "  Date: " + date;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + this.idPurchase;
-        return hash;
+        return Objects.hash(idPurchase);
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Purchase other = (Purchase) obj;
-        if (this.idPurchase != other.idPurchase) {
-            return false;
-        }
-        return true;
+    @ManyToOne
+    @JoinColumn(name = "idCustomer", referencedColumnName = "idCustomer", nullable = false)
+    public Customer getCustomersByIdCustomer() {
+        return customerByIdCustomer;
+    }
+
+    public void setCustomersByIdCustomer(Customer customerByIdCustomer) {
+        this.customerByIdCustomer = customerByIdCustomer;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "idItem", referencedColumnName = "idItem", nullable = false)
+    public Item getItemsByIdItem() {
+        return itemByIdItem;
+    }
+
+    public void setItemsByIdItem(Item itemByIdItem) {
+        this.itemByIdItem = itemByIdItem;
+    }
+
+    @OneToMany(mappedBy = "purchasesByIdPurchase")
+    public List<Review> getReviewsByIdPurchase() {
+        return reviewByIdPurchase;
+    }
+
+    public void setReviewsByIdPurchase(List<Review> reviewByIdPurchase) {
+        this.reviewByIdPurchase = reviewByIdPurchase;
     }
 }

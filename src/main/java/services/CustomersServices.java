@@ -11,10 +11,6 @@ import dao.DAOFactory;
 import model.Customer;
 import model.User;
 
-/**
- *
- * @author Laura
- */
 public class CustomersServices {
 
     private DAOFactory dao;

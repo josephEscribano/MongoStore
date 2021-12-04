@@ -1,2 +1,0 @@
-1;moues;Razer;150.0
-2;keyboard;Corsair;120.0

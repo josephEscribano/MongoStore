@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
-<properties>
-    <entry key="Filepurchases">data/purchases.txt</entry>
-    <entry key="XMLCustomer">data/customer.xml</entry>
-    <entry key="FileItem">data/items.txt</entry>
-    <entry key="mysqlProperties">propertiesFiles/Store-properties.xml</entry>
-</properties>

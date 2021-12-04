@@ -1,25 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
-/**
- *
- * @author Laura
- */
+@Entity
+@Table(name = "Items")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Item {
-
     private int idItem;
     private String name;
     private String company;
     private double price;
-
-    public Item() {
-    }
+    private List<Purchase> purchaseByIdItem;
 
     public Item(int idItem, String name, String company, double price) {
         this.idItem = idItem;
@@ -34,14 +31,8 @@ public class Item {
         this.price = price;
     }
 
-    public Item(String s) {
-        String [] array = s.split(";");
-        this.idItem = Integer.parseInt(array[0]);
-        this.name = array[1];
-        this.company = array[2];
-        this.price = Double.parseDouble(array[3]);
-    }
-
+    @Id
+    @Column(name = "idItem", nullable = false)
     public int getIdItem() {
         return idItem;
     }
@@ -50,6 +41,8 @@ public class Item {
         this.idItem = idItem;
     }
 
+    @Basic
+    @Column(name = "name", nullable = false, length = 45)
     public String getName() {
         return name;
     }
@@ -58,6 +51,8 @@ public class Item {
         this.name = name;
     }
 
+    @Basic
+    @Column(name = "company", nullable = false, length = 45)
     public String getCompany() {
         return company;
     }
@@ -66,25 +61,14 @@ public class Item {
         this.company = company;
     }
 
+    @Basic
+    @Column(name = "price", nullable = false, precision = 0)
     public double getPrice() {
         return price;
     }
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return idItem + " " + name + " " + price + "€";
-    }
-    
-    public String toStringTextFile() {
-        return idItem + ";" + name + ";" + company + ";" + price;
-    }
-
-    public String toStringVisual() {
-        return "ID: " + idItem + "  Name: " + name + "  Company: " + company + " Price: " + price;
     }
 
     @Override
@@ -98,5 +82,19 @@ public class Item {
     @Override
     public int hashCode() {
         return Objects.hash(idItem);
+    }
+
+    @Override
+    public String toString() {
+        return idItem + " " + name + " " + price + "€";
+    }
+
+    @OneToMany(mappedBy = "itemsByIdItem")
+    public List<Purchase> getPurchasesByIdItem() {
+        return purchaseByIdItem;
+    }
+
+    public void setPurchasesByIdItem(List<Purchase> purchaseByIdItem) {
+        this.purchaseByIdItem = purchaseByIdItem;
     }
 }

@@ -11,10 +11,6 @@ import java.util.List;
 import dao.DAOFactory;
 import model.Purchase;
 
-/**
- *
- * @author dam2
- */
 public class PurchasesServices {
     private DAOFactory dao;
 

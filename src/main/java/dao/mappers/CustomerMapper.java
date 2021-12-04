@@ -1,4 +1,4 @@
-package dao.springJDBC.mappers;
+package dao.mappers;
 
 import model.Customer;
 import org.springframework.jdbc.core.RowMapper;
@@ -13,7 +13,7 @@ public class CustomerMapper implements RowMapper<Customer> {
 
         customer.setIdCustomer(rs.getInt(1));
         customer.setName(rs.getString(2));
-        customer.setPhone(rs.getString(3));
+        customer.setTelephone(rs.getString(3));
         customer.setAddress(rs.getString(4));
 
         return customer;

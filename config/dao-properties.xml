@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <entry key="daoItemsJDBC">JDBCDAOItems</entry>
-    <entry key="daoCustomersJDBC">JDBCDAOcustomers</entry>
-    <entry key="daoPurchasesJDBC">JDBCDAOpurchases.java</entry>
-    <entry key="daoCustomersSpring">SpringDAOCustomers</entry>
-    <entry key="daoItemsSpring">SpringDAOItems</entry>
-    <entry key="daoPurchasesSpring">SpringDAOPurchases</entry>
-    <entry key="daoReviewsSpring">SpringDAOReviews</entry>
-    <entry key="daoUsersSpring">SpringDAOUsers</entry>
+    <entry key="daoCustomersHibernate">HibernateDAOCustomers</entry>
+    <entry key="daoItemsHibernate">HibernateDAOItems</entry>
+    <entry key="daoPurchasesHibernate">HibernateDAOPurchases</entry>
+    <entry key="daoReviewsHibernate">HibernateDAOReviews</entry>
+    <entry key="daoUsersHibernate">HibernateDAOUsers</entry>
 </properties>

@@ -27,8 +27,5 @@ public interface DAOItems {
 
     Item findItemByID(int id);
 
-
-    void closePool();
-
     int checkItemReview(int id);
 }

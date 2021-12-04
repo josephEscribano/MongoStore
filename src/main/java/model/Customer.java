@@ -1,48 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import java.util.ArrayList;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
-/**
- *
- * @author dam2
- */
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
+@Entity
+@Table(name = "Customers")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Customer {
-
     private int idCustomer;
     private String name;
-    private String phone;
+    private String telephone;
     private String address;
-    private ArrayList<Review> reviews;
+    private User userByIdCustomer;
+    private List<Purchase> purchaseByIdCustomer;
 
-    public Customer() {
-    }
-
-    public Customer(int idCustomer, String name, String phone, String address) {
+    public Customer(int idCustomer, String name, String telephone, String address) {
         this.idCustomer = idCustomer;
         this.name = name;
+        this.telephone = telephone;
         this.address = address;
-        this.phone = phone;
-        reviews = new ArrayList();
+
     }
 
-    public Customer(String name, String phone, String address) {
+    public Customer(String name, String telephone, String address) {
         this.name = name;
-        this.phone = phone;
+        this.telephone = telephone;
         this.address = address;
     }
 
+    @Id
+    @Column(name = "idCustomer", nullable = false)
     public int getIdCustomer() {
         return idCustomer;
     }
@@ -51,6 +44,8 @@ public class Customer {
         this.idCustomer = idCustomer;
     }
 
+    @Basic
+    @Column(name = "name", nullable = false, length = 100)
     public String getName() {
         return name;
     }
@@ -59,22 +54,18 @@ public class Customer {
         this.name = name;
     }
 
-    public String getPhone() {
-        return phone;
+    @Basic
+    @Column(name = "telephone", nullable = false, length = 100)
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
-    public ArrayList<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(ArrayList<Review> reviews) {
-        this.reviews = reviews;
-    }
-
+    @Basic
+    @Column(name = "address", nullable = false, length = 100)
     public String getAddress() {
         return address;
     }
@@ -83,49 +74,40 @@ public class Customer {
         this.address = address;
     }
 
-    public void addReview(Review review) {
-        reviews.add(review);
-    }
-
-    public String toStringShort() {
-        return Integer.toString(idCustomer) + " - " + name;
-    }
-
-    public String toStringTexto() {
-        return idCustomer + "/" + name + "/" + phone + "/" + address + "/" + reviews;
-    }
-
-    public String toStringReviews() {
-        ArrayList<String> rev = new ArrayList();
-        
-        if(reviews != null){
-            for (int i = 0; i < reviews.size(); i++) {
-                rev.add(reviews.get(i).toStringVisual());
-            }
-        }
-        
-        
-        return "ID: " + idCustomer + "  Name: " + name
-                + "\nPhone: " + phone + "  Address: " + address
-                + "\n\n======       Reviews done by this client:      ======\n\n" + rev;
-    }
-
-    @Override
-    public String toString() {
-        return "ID: " + idCustomer + "  Name: " + name + "  Phone: " + phone + "  Address: " + address;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        return hash;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
         return idCustomer == customer.idCustomer;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + idCustomer + "  Name: " + name + "  Phone: " + telephone + "  Address: " + address;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idCustomer);
+    }
+
+    @OneToOne
+    @JoinColumn(name = "idCustomer", referencedColumnName = "idUser", nullable = false)
+    public User getUsersByIdCustomer() {
+        return userByIdCustomer;
+    }
+
+    public void setUsersByIdCustomer(User userByIdCustomer) {
+        this.userByIdCustomer = userByIdCustomer;
+    }
+
+    @OneToMany(mappedBy = "customersByIdCustomer")
+    public List<Purchase> getPurchasesByIdCustomer() {
+        return purchaseByIdCustomer;
+    }
+
+    public void setPurchasesByIdCustomer(List<Purchase> purchaseByIdCustomer) {
+        this.purchaseByIdCustomer = purchaseByIdCustomer;
     }
 }
