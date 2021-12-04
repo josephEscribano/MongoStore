@@ -24,11 +24,11 @@
             </Menu>
             <Menu fx:id="customers" mnemonicParsing="false" text="Customers">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#chargeAddCustomer" text="Add Customer" />
-                  <MenuItem mnemonicParsing="false" onAction="#chargeListCustomer" text="List Customers" />
-                  <MenuItem mnemonicParsing="false" onAction="#chargeFindCustomer" text="Find by ID" />
-                  <MenuItem mnemonicParsing="false" onAction="#chargeDeleteCustomer" text="Delete Customer" />
-                  <MenuItem mnemonicParsing="false" onAction="#chargeUpdateCustomer" text="Update Customer" />
+                <MenuItem fx:id="customerAdd" mnemonicParsing="false" onAction="#chargeAddCustomer" text="Add Customer" />
+                  <MenuItem fx:id="customerList" mnemonicParsing="false" onAction="#chargeListCustomer" text="List Customers" />
+                  <MenuItem fx:id="customerFind" mnemonicParsing="false" onAction="#chargeFindCustomer" text="Find by ID" />
+                  <MenuItem fx:id="customerDelete" mnemonicParsing="false" onAction="#chargeDeleteCustomer" text="Delete Customer" />
+                  <MenuItem fx:id="customerUpdate" mnemonicParsing="false" onAction="#chargeUpdateCustomer" text="Update Customer" />
               </items>
             </Menu>
             <Menu fx:id="purchase" mnemonicParsing="false" text="Purchases">

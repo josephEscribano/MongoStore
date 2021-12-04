@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Solucion" />
         <module name="WebStore18-19-XML" />
+        <module name="SpringJDBCWebstoreAD" />
         <module name="WebStore-Skeleton" />
         <module name="SpringJDBC" />
       </profile>

@@ -33,6 +33,16 @@ import javax.xml.parsers.ParserConfigurationException;
  */
 public class FXMLPrincipalController implements Initializable {
     @FXML
+    public MenuItem customerUpdate;
+    @FXML
+    public MenuItem customerAdd;
+    @FXML
+    public MenuItem customerList;
+    @FXML
+    public MenuItem customerFind;
+    @FXML
+    public MenuItem customerDelete;
+    @FXML
     private MenuItem deletereviewitem;
     @FXML
     private MenuItem addReviews;
@@ -132,6 +142,9 @@ public class FXMLPrincipalController implements Initializable {
 
     private AnchorPane updateReview;
     private FXMLUpdateReviewController fxmlUpdateReviewController;
+
+    private AnchorPane updateCustomerUser;
+    private FXMLUpdateCustomerUserController fxmlUpdateCustomerControllerUser;
 
 
 
@@ -361,6 +374,21 @@ public class FXMLPrincipalController implements Initializable {
 
     }
 
+    public void preloadUpdateCustomerUser() {
+
+        try {
+            FXMLLoader loaderMenu = new FXMLLoader(
+                    getClass().getResource(
+                            "/fxml/customers/FXMLUpdateCustomerUser.fxml"));
+            updateCustomerUser = loaderMenu.load();
+            fxmlUpdateCustomerControllerUser = loaderMenu.getController();
+            fxmlUpdateCustomerControllerUser.setPrincipal(this);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
     public void preloadUpdateItem() {
 
         try {
@@ -468,13 +496,21 @@ public class FXMLPrincipalController implements Initializable {
             customers.setVisible(true);
             purchase.setVisible(true);
             deletereviewitem.setVisible(true);
+            customerAdd.setVisible(true);
+            customerDelete.setVisible(true);
+            customerFind.setVisible(true);
+            customerList.setVisible(true);
             addReviews.setVisible(false);
         }else{
             fxMenuTop.setVisible(true);
             items.setVisible(false);
-            customers.setVisible(false);
             purchase.setVisible(false);
             deletereviewitem.setVisible(false);
+            customerAdd.setVisible(false);
+            customerDelete.setVisible(false);
+            customerFind.setVisible(false);
+            customerList.setVisible(false);
+            customerUpdate.setVisible(true);
             addReviews.setVisible(true);
         }
 
@@ -538,8 +574,14 @@ public class FXMLPrincipalController implements Initializable {
         fxRoot.setCenter(deleteitem);
     }
     public void chargeUpdateCustomer() {
-        fxmlUpdateCustomerController.loadItems();
-        fxRoot.setCenter(updateCustomer);
+        if(getIdUser() > 0){
+            fxmlUpdateCustomerControllerUser.showInfo();
+            fxRoot.setCenter(updateCustomerUser);
+        }else{
+            fxmlUpdateCustomerController.loadItems();
+            fxRoot.setCenter(updateCustomer);
+        }
+
     }
 
     public void chargeUpdateItem() {
@@ -601,6 +643,8 @@ public class FXMLPrincipalController implements Initializable {
         preloadListPurchase();
         preloadListReview();
         preloadUpdateReview();
+        preloadUpdateCustomerUser();
+
 
         chargeLogin();
 
