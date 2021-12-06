@@ -32,6 +32,7 @@ public class Item {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idItem", nullable = false)
     public int getIdItem() {
         return idItem;

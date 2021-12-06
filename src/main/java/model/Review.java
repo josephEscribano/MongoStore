@@ -36,6 +36,7 @@ public class Review {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idReview", nullable = false)
     public int getIdReview() {
         return idReview;

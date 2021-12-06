@@ -33,6 +33,7 @@ public class Purchase {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idPurchase", nullable = false)
     public int getIdPurchase() {
         return idPurchase;

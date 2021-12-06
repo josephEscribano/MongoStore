@@ -4,82 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="TERMINADO">
-      <change afterPath="$PROJECT_DIR$/.idea/HibernateStore.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/HibernateUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOCustomers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOItems.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOPurchases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOReviews.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOUsers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="getAll hechos">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/dao-properties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/dao-properties.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/store-properties.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/customer.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/items.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/purchases.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/ConfigProperties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/ConfigYaml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/configuration/ConfigYaml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/JDBCproperties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DBConPool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DBConection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOCustomers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOPurchases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOReviews.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOUsers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mappers/CustomerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/ItemRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mappers/ItemRowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/PurchasesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mappers/PurchasesMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/ReviewsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mappers/ReviewsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mappers/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/MainFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Customers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Purchase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/configuration/ConfigProperties.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/configuration/ConfigYaml.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configuration/ConfigYaml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/configuration/JDBCproperties.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DBConPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DBConection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOCustomers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOItems.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOPurchases.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/SpringDAOReviews.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/mappers/CustomerMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/mappers/ItemRowMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/mappers/PurchasesMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/springJDBC/mappers/ReviewsMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLUpdateCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLUpdateCustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/MainFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Customers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Purchase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Purchase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Review.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/CustomersServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/CustomersServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +75,7 @@
       <recent name="E:\Proyect\ProyectosAD\jdbcWebstore\propertiesFiles" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
+      <recent name="utils.HibernateQuerys" />
       <recent name="utils.Constantes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -261,7 +189,8 @@
       <workItem from="1636994390019" duration="4215000" />
       <workItem from="1637002665406" duration="7574000" />
       <workItem from="1638631865587" duration="379000" />
-      <workItem from="1638632404328" duration="14348000" />
+      <workItem from="1638632404328" duration="14684000" />
+      <workItem from="1638699362027" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -403,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638632057474</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="getAll hechos">
+      <created>1638648740128</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1638648740128</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +389,8 @@
     <MESSAGE value="he hecho el add de customer" />
     <MESSAGE value="save hecho, falta update y delete" />
     <MESSAGE value="TERMINADO" />
-    <option name="LAST_COMMIT_MESSAGE" value="TERMINADO" />
+    <MESSAGE value="getAll hechos" />
+    <option name="LAST_COMMIT_MESSAGE" value="getAll hechos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

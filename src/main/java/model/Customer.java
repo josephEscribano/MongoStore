@@ -35,6 +35,7 @@ public class Customer {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idCustomer", nullable = false)
     public int getIdCustomer() {
         return idCustomer;
