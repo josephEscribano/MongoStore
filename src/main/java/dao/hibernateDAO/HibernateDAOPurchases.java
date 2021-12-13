@@ -26,10 +26,8 @@ public class HibernateDAOPurchases implements DAOPurchases {
     @Override
     public List<Purchase> getAll() {
         Session session;
-        List<Purchase> list;
         session = HibernateUtils.getSession();
-        Query query = session.createQuery(HibernateQuerys.FROM_PURCHASE_);
-        list = query.list();
+        List<Purchase> list = session.createQuery(HibernateQuerys.FROM_PURCHASE_,Purchase.class).list();
         session.close();
         return list;
     }

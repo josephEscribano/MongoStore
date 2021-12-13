@@ -5,6 +5,7 @@ import dao.interfaces.DAOCustomers;
 import model.Customer;
 import model.User;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateQuerys;
 import utils.Querys;
@@ -15,16 +16,18 @@ public class HibernateDAOCustomers implements DAOCustomers {
 
     @Override
     public Customer get(int id) {
-        return null;
+        Session session = HibernateUtils.getSession();
+        Customer customer = session.get(Customer.class,id);
+
+        session.close();
+        return customer;
     }
 
     @Override
     public List<Customer> getAll() {
         Session session;
-        List<Customer> list;
         session = HibernateUtils.getSession();
-        Query query = session.createQuery(HibernateQuerys.FROM_CUSTOMER);
-        list = query.list();
+        List<Customer> list = session.createQuery(HibernateQuerys.FROM_CUSTOMER,Customer.class).list();
         session.close();
         return list;
     }

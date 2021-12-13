@@ -46,6 +46,13 @@ public class FXMLAddCustomerController implements Initializable {
         phoneBox.clear();
         addressBox.clear();
         customerList.getItems().setAll(cs.getAllCustomers());
+
+    }
+    public void getCustomer(){
+        CustomersServices cs = new CustomersServices();
+        Customer customer = customerList.getSelectionModel().getSelectedItem();
+        cs.getCustomer(customer.getIdCustomer());
+        System.out.println(customer);
     }
 
     public void addCustomer() {

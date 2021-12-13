@@ -15,10 +15,8 @@ public class HibernateDAOItems implements DAOItems {
     @Override
     public List<Item> getAll() {
         Session session;
-        List<Item> list;
         session = HibernateUtils.getSession();
-        Query query = session.createQuery(HibernateQuerys.FROM_ITEM_);
-        list = query.list();
+        List<Item> list = session.createQuery(HibernateQuerys.FROM_ITEM_,Item.class).list();
         session.close();
         return list;
     }

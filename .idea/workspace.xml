@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="getAll hechos">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOCustomers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOPurchases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOReviews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLAddCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLAddCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Purchase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Purchase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Review.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +65,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hibernateLucia" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../psp/primerServerPayara" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -69,13 +79,9 @@
       <recent name="F:\IES Quevedo 21-22\Acceso a datos 21-22\AD-Workspace21-22\WebStore18-19-XML\src\main\resources\fxml\items" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Proyect\ProyectosAD\HibernateStore\src\main\resources\META-INF" />
-      <recent name="E:\Proyect\ProyectosAD\HibernateStore\src\main\resources" />
-      <recent name="E:\Proyect\ProyectosAD\HibernateStore\src\main\resources\Data" />
       <recent name="E:\Proyect\ProyectosAD\jdbcWebstore\propertiesFiles" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
-      <recent name="utils.HibernateQuerys" />
       <recent name="utils.Constantes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -84,10 +90,18 @@
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="model" />
+      <recent name="model.modelHibernate" />
       <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainFX">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="HibernateStore" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -120,10 +134,12 @@
     <list>
       <item itemvalue="Application.MainFX" />
       <item itemvalue="Application.MainJDCB" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainFX" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MainJDCB" />
       </list>
     </recent_temporary>
@@ -188,9 +204,13 @@
       <workItem from="1636976192525" duration="6140000" />
       <workItem from="1636994390019" duration="4215000" />
       <workItem from="1637002665406" duration="7574000" />
-      <workItem from="1638631865587" duration="379000" />
-      <workItem from="1638632404328" duration="14684000" />
-      <workItem from="1638699362027" duration="8000" />
+      <workItem from="1637832248554" duration="2447000" />
+      <workItem from="1638437014847" duration="449000" />
+      <workItem from="1638437537379" duration="4136000" />
+      <workItem from="1639041907505" duration="157000" />
+      <workItem from="1639042070218" duration="382000" />
+      <workItem from="1639042471518" duration="3028000" />
+      <workItem from="1639388326517" duration="6552000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -325,19 +345,19 @@
       <option name="project" value="LOCAL" />
       <updated>1636982336580</updated>
     </task>
-    <task id="LOCAL-00020" summary="TERMINADO">
-      <created>1638632057474</created>
+    <task id="LOCAL-00020" summary="final">
+      <created>1637225515369</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1638632057474</updated>
+      <updated>1637225515369</updated>
     </task>
-    <task id="LOCAL-00021" summary="getAll hechos">
-      <created>1638648740128</created>
+    <task id="LOCAL-00021" summary="hibernate añadido">
+      <created>1638439389766</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1638648740128</updated>
+      <updated>1638439389766</updated>
     </task>
     <option name="localTasksCounter" value="22" />
     <servers />
@@ -388,43 +408,40 @@
     <MESSAGE value="falta las reviews y ajustar las busquedas por id y hacer los ejercicios" />
     <MESSAGE value="he hecho el add de customer" />
     <MESSAGE value="save hecho, falta update y delete" />
-    <MESSAGE value="TERMINADO" />
-    <MESSAGE value="getAll hechos" />
-    <option name="LAST_COMMIT_MESSAGE" value="getAll hechos" />
+    <MESSAGE value="final" />
+    <MESSAGE value="hibernate añadido" />
+    <option name="LAST_COMMIT_MESSAGE" value="hibernate añadido" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/main/MainFX.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java</url>
-          <line>577</line>
+          <line>576</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java</url>
-          <line>581</line>
+          <line>580</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerController.java</url>
-          <line>53</line>
+          <line>51</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOReviews.java</url>
-          <line>30</line>
+          <line>29</line>
           <properties class="dao.springJDBC.SpringDAOReviews">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java</url>
-          <line>119</line>
-          <properties class="dao.springJDBC.SpringDAOItems">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

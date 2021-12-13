@@ -30,10 +30,8 @@ public class HibernateDAOReviews implements DAOReviews {
     @Override
     public List<Review> getAll() {
         Session session;
-        List<Review> list;
         session = HibernateUtils.getSession();
-        Query query = session.createQuery(HibernateQuerys.FROM_REVIEW_);
-        list = query.list();
+        List<Review> list = session.createQuery(HibernateQuerys.FROM_REVIEW_,Review.class).list();
         session.close();
         return list;
     }
