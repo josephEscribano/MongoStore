@@ -27,11 +27,11 @@ public class FXMLDeleteItemController implements Initializable {
         Item it = lvlistItems.getSelectionModel().getSelectedItem();
         ItemsServices itemsServices = new ItemsServices();
         if (it != null) {
-
-            if (itemsServices.checkDelete(it.getIdItem(), false) == -1) {
+            int result = itemsServices.checkDelete(it.getIdItem(), false);
+            if (result == -1) {
                 alert.setContentText(Constantes.EXIST_REVIEWS);
                 alert.showAndWait();
-            } else if (itemsServices.checkDelete(it.getIdItem(), false) == -3) {
+            } else if (result == -3) {
                 confir.setTitle(Constantes.TITLE_MESSAGE);
                 confir.setContentText(Constantes.NOTICE_DELETED);
                 Optional<ButtonType> action = confir.showAndWait();
@@ -45,9 +45,9 @@ public class FXMLDeleteItemController implements Initializable {
 
 
                 }
-            } else if (itemsServices.checkDelete(it.getIdItem(), false) == -5) {
+            } else if (result == -5) {
                 lvlistItems.getItems().remove(it);
-            }else if (itemsServices.checkDelete(it.getIdItem(), false) == -2){
+            }else if (result == -2){
                 alert.setContentText(Constantes.ITEM_NOT_DELETED);
                 alert.showAndWait();
             }

@@ -1,6 +1,4 @@
 
-p
-@src/main/java/fx/controllers/items/FXMLDeleteItemController.java,1\0\106f88e44ee34e0b81893cfc5632411f91880e8c
 n
 >src/main/java/fx/controllers/items/FXMLAddItemsController.java,5\1\51ed8fcc16560b6e83d50b0475bb0af1ed90492b
 t
