@@ -1,6 +1,7 @@
 package services;
 
 import dao.DAOFactory;
+import model.User;
 
 public class UserService {
 
@@ -10,7 +11,7 @@ public class UserService {
         this.dao = new DAOFactory();
     }
 
-    public int checkUser(String name, String password){
+    public User checkUser(String name, String password){
         return dao.getDAOUsers().checkUser(name,password);
     }
 

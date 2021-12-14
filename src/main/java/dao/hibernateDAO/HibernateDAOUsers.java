@@ -1,11 +1,19 @@
 package dao.hibernateDAO;
 
+import dao.HibernateUtils;
 import dao.interfaces.DAOUsers;
+import model.User;
+import org.hibernate.Session;
 
 public class HibernateDAOUsers implements DAOUsers {
     @Override
-    public int checkUser(String name, String password) {
-        return 0;
+    public User checkUser(String name, String password) {
+        Session session = HibernateUtils.getSession();
+        User user = session.createNamedQuery("findUser",User.class)
+                .setParameter("name",name)
+                .setParameter("pass",password)
+                .uniqueResult();
+        return user;
     }
 
     @Override

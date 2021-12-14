@@ -1,7 +1,9 @@
 package dao.interfaces;
 
+import model.User;
+
 public interface DAOUsers {
 
-    int checkUser(String name, String password);
+    User checkUser(String name, String password);
     int checkUserByName(String name);
 }

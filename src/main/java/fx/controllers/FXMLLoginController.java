@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import model.User;
 import services.UserService;
 import utils.Constantes;
 
@@ -39,17 +40,17 @@ public class FXMLLoginController implements Initializable {
     }
     
     
-    public void clickLogin(){
+    public void cleckLogin(){
         UserService serviceUser = new UserService();
-
-        if (serviceUser.checkUser(fxUser.getText(),passBox.getText()) >= 0){
-            int idUser = serviceUser.checkUser(fxUser.getText(),passBox.getText());
-            principal.setIdUser(idUser);
+        User user = serviceUser.checkUser(fxUser.getText(),passBox.getText());
+        if (user != null){
+            principal.setIdUser(user.getIdUser());
             principal.setUsername(fxUser.getText());
             principal.chargeWelcome();
         }else{
             errorBox.setText(Constantes.PASSWORD_IS_WRONG);
         }
+
 
         
     }

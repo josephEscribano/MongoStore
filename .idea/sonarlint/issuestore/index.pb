@@ -3,14 +3,8 @@ p
 @src/main/java/fx/controllers/items/FXMLDeleteItemController.java,1\0\106f88e44ee34e0b81893cfc5632411f91880e8c
 n
 >src/main/java/fx/controllers/items/FXMLAddItemsController.java,5\1\51ed8fcc16560b6e83d50b0475bb0af1ed90492b
-Z
-*src/main/java/dao/interfaces/DAOUsers.java,2\d\2df4e2ec2a0bc049684a2bfb5acb0e03463823d9
-@
-config/users.yml,5\6\567c49cc4e84598d09a77616d94892ec07c56da4
 t
 Dsrc/main/java/fx/controllers/reviews/FXMLUpdateReviewController.java,1\2\126ac5a9ba4605d2133ba3273731be56f7db1745
-W
-'src/main/java/services/UserService.java,f\8\f88b0fc904fcbbe4a39e1cd49ea74cc88d783b2c
 x
 Hsrc/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java,0\9\09be0fb26da1382b052adf34756c13cd3a27a201
 v
@@ -25,8 +19,6 @@ u
 Esrc/main/java/fx/controllers/customers/FXMLAddCustomerController.java,b\8\b829020954e07c09bdb5f69f26d087305e7db982
 v
 Fsrc/main/java/fx/controllers/customers/FXMLListCustomerController.java,1\5\15488958c5d69bc2ee6e2df712660d0889bea658
-i
-9src/main/java/fx/controllers/FXMLPrincipalController.java,a\2\a2d6586fafbe7669685ad3711629897c70c82aaf
 x
 Hsrc/main/java/fx/controllers/customers/FXMLUpdateCustomerController.java,7\0\70d954660c01627b2a31f5fcd5cc14209ccea58d
 |
@@ -37,8 +29,6 @@ Q
 ,src/main/java/dao/mappers/ReviewsMapper.java,6\8\684d922d371157e7948bd85ff015503de47a73a0
 Y
 )src/main/java/dao/mappers/UserMapper.java,5\4\549ca64f4427782535a2f498c5240e97e0cfaa14
-[
-+src/main/java/configuration/ConfigYaml.java,7\9\79830940932d2d2968b3c8ca934107eb704d8eef
 N
 src/main/java/main/MainFX.java,0\b\0b1ca344ee7d18831cec3b217c85cbfcc8a7e495
 ]
@@ -53,13 +43,9 @@ Z
 ,src/main/java/dao/mappers/ItemRowMapper.java,4\b\4b54cc1929397b8c4c8ce99942a2bfefa940b2aa
 ^
 .src/main/java/dao/mappers/PurchasesMapper.java,d\8\d8b9c5053145dc229c0953ddc0bf80506e63534f
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 ]
 -src/main/java/services/PurchasesServices.java,0\6\069698f6abd69f20306da7aaf5a0e6295bd0f33c
 [
 +src/main/java/services/ReviewsServices.java,c\c\cc24ae0143852878ec1899cdebd82f6c3acf5639
 I
 config/dao-properties.xml,2\2\22c2a4540e935f70ceca67d44e83169354775eed
-U
-%src/main/java/dao/HibernateUtils.java,3\3\3317bf6fd2b94143b5f95d59a1b58670f713f464

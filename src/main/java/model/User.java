@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.Objects;
 
+@NamedQuery(name = "findUser", query = "select u from User u where name = :name and password = :pass")
 @Entity
 @Table(name = "Users")
 @NoArgsConstructor
