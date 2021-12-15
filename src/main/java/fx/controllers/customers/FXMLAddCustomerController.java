@@ -48,12 +48,7 @@ public class FXMLAddCustomerController implements Initializable {
         customerList.getItems().setAll(cs.getAllCustomers());
 
     }
-    public void getCustomer(){
-        CustomersServices cs = new CustomersServices();
-        Customer customer = customerList.getSelectionModel().getSelectedItem();
-        cs.getCustomer(customer.getIdCustomer());
-        System.out.println(customer);
-    }
+
 
     public void addCustomer() {
         CustomersServices customersServices = new CustomersServices();

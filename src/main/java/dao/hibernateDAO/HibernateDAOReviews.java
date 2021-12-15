@@ -2,7 +2,9 @@ package dao.hibernateDAO;
 
 import dao.HibernateUtils;
 import dao.interfaces.DAOReviews;
+import lombok.extern.log4j.Log4j2;
 import model.Customer;
+import model.Purchase;
 import model.Review;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -10,6 +12,7 @@ import utils.HibernateQuerys;
 
 import java.util.List;
 
+@Log4j2
 public class HibernateDAOReviews implements DAOReviews {
 
     @Override
@@ -29,10 +32,20 @@ public class HibernateDAOReviews implements DAOReviews {
 
     @Override
     public List<Review> getAll() {
-        Session session;
-        session = HibernateUtils.getSession();
-        List<Review> list = session.createQuery(HibernateQuerys.FROM_REVIEW_,Review.class).list();
-        session.close();
+        Session session = null;
+        List<Review> list = null;
+        try{
+            session = HibernateUtils.getSession();
+            list = session.createQuery(HibernateQuerys.FROM_REVIEW_,Review.class).list();
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+        }finally {
+            if (session != null){
+                session.close();
+            }
+
+        }
+
         return list;
     }
 

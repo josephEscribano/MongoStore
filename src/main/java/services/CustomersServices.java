@@ -47,11 +47,6 @@ public class CustomersServices {
         return confirmacion;
     }
 
-    public Customer getCustomer(int id){
-        return dao.getDAOCustomers().get(id);
-
-    }
-
     public boolean addCustomer(Customer customer, User user)  {
 
         return dao.getDAOCustomers().saveWithUser(customer,user);
