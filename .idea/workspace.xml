@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="login arreglado">
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/ConfigYaml.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOCustomers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOPurchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOReviews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLAddCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLAddCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/configuration/ConfigYaml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/items/FXMLDeleteItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/items/FXMLDeleteItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLAddCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLAddCustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/CustomersServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/CustomersServices.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,6 +209,9 @@
       <workItem from="1639042471518" duration="3028000" />
       <workItem from="1639388326517" duration="6552000" />
       <workItem from="1639506405160" duration="4922000" />
+      <workItem from="1639570989472" duration="1644000" />
+      <workItem from="1641814508830" duration="5524000" />
+      <workItem from="1641899136455" duration="6016000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -366,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639512646530</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="try metido">
+      <created>1639571033924</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1639571033924</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,7 +426,8 @@
     <MESSAGE value="final" />
     <MESSAGE value="hibernate añadido" />
     <MESSAGE value="login arreglado" />
-    <option name="LAST_COMMIT_MESSAGE" value="login arreglado" />
+    <MESSAGE value="try metido" />
+    <option name="LAST_COMMIT_MESSAGE" value="try metido" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

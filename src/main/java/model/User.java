@@ -2,6 +2,8 @@ package model;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import net.bytebuddy.dynamic.loading.ClassReloadingStrategy;
+import org.codehaus.plexus.classworlds.strategy.Strategy;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -24,6 +26,7 @@ public class User {
 
     @Id
     @Column(name = "idUser", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getIdUser() {
         return idUser;
     }

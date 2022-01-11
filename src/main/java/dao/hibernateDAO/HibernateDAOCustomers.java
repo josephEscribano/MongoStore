@@ -11,6 +11,7 @@ import org.hibernate.query.Query;
 import utils.HibernateQuerys;
 import utils.Querys;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Log4j2
@@ -46,19 +47,29 @@ public class HibernateDAOCustomers implements DAOCustomers {
 
     @Override
     public boolean saveWithUser(Customer customer, User user) {
+        boolean confirmacion = false;
         Session session = null;
-
+        Transaction transaction = null;
         try{
 
             session = HibernateUtils.getSession();
+            transaction = session.beginTransaction();
+            Serializable serializable = session.save(user);
+            customer.setIdCustomer((int) serializable);
+            session.save(customer);
+            transaction.commit();
+            confirmacion = true;
         }catch (Exception e){
             log.error(e.getMessage(),e);
+            if (transaction != null){
+                transaction.rollback();
+            }
         }finally {
             if (session != null){
                 session.close();
             }
         }
-        return false;
+        return confirmacion;
     }
 
     @Override
