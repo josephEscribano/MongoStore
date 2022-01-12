@@ -30,12 +30,12 @@ public class CustomersServices {
         return dao.getDAOCustomers().findCustomerByID(id);
     }
 
-    public int deleteCustomer(int id) {
+    public int deleteCustomer(Customer customer) {
         int confirmacion = 1;
-        int tienePurchase = dao.getDAOPurchases().searchCustomerByid(id);
+        int tienePurchase = dao.getDAOPurchases().searchCustomerByid(customer.getIdCustomer());
 
         if (tienePurchase == 0){
-            int resultado = dao.getDAOCustomers().deleteWithUser(id);
+            int resultado = dao.getDAOCustomers().deleteWithUser(customer);
             if (resultado < 0){
                 confirmacion = resultado;
             }else{

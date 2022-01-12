@@ -5,6 +5,7 @@ import dao.interfaces.DAOCustomers;
 import lombok.extern.log4j.Log4j2;
 import model.Customer;
 import model.User;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -54,8 +55,7 @@ public class HibernateDAOCustomers implements DAOCustomers {
 
             session = HibernateUtils.getSession();
             transaction = session.beginTransaction();
-            Serializable serializable = session.save(user);
-            customer.setIdCustomer((int) serializable);
+            customer.setIdCustomer((int) session.save(user));
             session.save(customer);
             transaction.commit();
             confirmacion = true;
@@ -73,13 +73,55 @@ public class HibernateDAOCustomers implements DAOCustomers {
     }
 
     @Override
-    public int update(Customer t) {
-        return 0;
+    public int update(Customer customer) {
+        int confirmacion = 0;
+        Session session = null;
+        Transaction transaction = null;
+        try{
+            session = HibernateUtils.getSession();
+            transaction = session.beginTransaction();
+            session.update(customer);
+            transaction.commit();
+            confirmacion = 1;
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+            if (transaction != null){
+                transaction.rollback();
+            }
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return confirmacion;
     }
 
     @Override
-    public int deleteWithUser(int id) {
-        return 0;
+    public int deleteWithUser(Customer customer) {
+        int confirmacion ;
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = HibernateUtils.getSession();
+            transaction = session.beginTransaction();
+            session.delete(customer);
+            String query = "delete User u where u.idUser = :id ";
+            session.createQuery(query).setParameter("id",customer.getIdCustomer());
+            transaction.commit();
+            confirmacion = 1;
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+            if (transaction != null){
+                transaction.rollback();
+            }
+            confirmacion = -2;
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+
+        return confirmacion;
     }
 
     @Override

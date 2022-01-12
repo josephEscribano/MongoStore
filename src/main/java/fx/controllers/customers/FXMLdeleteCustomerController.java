@@ -38,12 +38,13 @@ public class FXMLdeleteCustomerController implements Initializable {
         CustomersServices cs = new CustomersServices();
         Customer customer = customerBox.getSelectionModel().getSelectedItem();
         if (customer != null) {
-            if (cs.deleteCustomer(customer.getIdCustomer()) == 0) {
+            int confirmacion = cs.deleteCustomer(customer);
+            if (confirmacion == 0) {
                 customerBox.getItems().remove(customer);
-            }else if (cs.deleteCustomer(customer.getIdCustomer()) == 1){
+            }else if (confirmacion == 1){
                 alert.setContentText(Constantes.EXIST_PURCHASE_ASSOCIATED);
                 alert.showAndWait();
-            }else if (cs.deleteCustomer(customer.getIdCustomer()) < 0){
+            }else if (confirmacion < 0){
                 alert.setContentText(Constantes.CUSTOMER_NOT_DELETED);
                 alert.showAndWait();
             }

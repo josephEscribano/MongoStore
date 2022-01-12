@@ -24,7 +24,7 @@ public interface DAOCustomers {
      
     int update(Customer t);
      
-    int deleteWithUser(int id);
+    int deleteWithUser(Customer customer);
 
     Customer findCustomerByID(int id);
 }
