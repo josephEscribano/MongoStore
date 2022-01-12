@@ -105,8 +105,8 @@ public class HibernateDAOCustomers implements DAOCustomers {
             session = HibernateUtils.getSession();
             transaction = session.beginTransaction();
             session.delete(customer);
-            String query = "delete User u where u.idUser = :id ";
-            session.createQuery(query).setParameter("id",customer.getIdCustomer());
+            User user = session.get(User.class, customer.getIdCustomer());
+            session.delete(user);
             transaction.commit();
             confirmacion = 1;
         }catch (Exception e){

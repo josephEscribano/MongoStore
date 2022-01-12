@@ -7,9 +7,9 @@
     <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOCustomers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOCustomers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOPurchases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLdeleteCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLdeleteCustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/CustomersServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/CustomersServices.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +208,7 @@
       <workItem from="1639570989472" duration="1644000" />
       <workItem from="1641814508830" duration="5524000" />
       <workItem from="1641899136455" duration="6158000" />
-      <workItem from="1641987121742" duration="3326000" />
+      <workItem from="1641987121742" duration="5550000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -378,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641907209278</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="error delete">
+      <created>1641990652635</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1641990652635</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +439,8 @@
     <MESSAGE value="login arreglado" />
     <MESSAGE value="try metido" />
     <MESSAGE value="añadir customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="añadir customer" />
+    <MESSAGE value="error delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="error delete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

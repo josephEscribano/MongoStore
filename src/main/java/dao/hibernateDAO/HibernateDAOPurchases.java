@@ -7,6 +7,7 @@ import model.Customer;
 import model.Item;
 import model.Purchase;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateQuerys;
 
@@ -61,7 +62,27 @@ public class HibernateDAOPurchases implements DAOPurchases {
 
     @Override
     public int searchCustomerByid(int id) {
-        return 0;
+        int confirmacion = 0;
+        Session session = null;
+        Transaction transaction = null;
+        try{
+            session = HibernateUtils.getSession();
+            transaction = session.beginTransaction();
+            String query = "select count(p.customersByIdCustomer.id) from Purchase p where p.customersByIdCustomer.id = :id";
+            int numero = (session.createQuery(query,Long.class).setParameter("id",id).uniqueResult()).intValue();
+            transaction.commit();
+            confirmacion = numero;
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+            if (transaction != null){
+                transaction.rollback();
+            }
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return confirmacion;
     }
 
     @Override
