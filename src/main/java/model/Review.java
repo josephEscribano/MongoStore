@@ -101,7 +101,7 @@ public class Review {
 
     @Override
     public String toString() {
-        return "No. " + idReview + "  Item: " + purchaseByIdPurchase.getItemsByIdItem().getIdItem() + "\nRating: " + rating + "\nTitle: " + title + "\nComment: " + description + "\nDate: " + date + "  Customer: " + purchaseByIdPurchase.getCustomersByIdCustomer().getIdCustomer() + "  Purchase no. " + purchaseByIdPurchase.getIdPurchase();
+        return "No. " + idReview + "  Item: " + purchaseByIdPurchase.getItemsByIdItem().getName() + "\nRating: " + rating + "\nTitle: " + title + "\nComment: " + description + "\nDate: " + date + "  Customer: " + purchaseByIdPurchase.getCustomersByIdCustomer().getName() + "  Purchase no. " + purchaseByIdPurchase.getIdPurchase();
     }
 
     @ManyToOne

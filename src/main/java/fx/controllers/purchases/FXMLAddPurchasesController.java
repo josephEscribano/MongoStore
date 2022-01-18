@@ -106,7 +106,7 @@ public class FXMLAddPurchasesController implements Initializable {
         LocalDate date = dateBox.getValue();
         Purchase purchase = new Purchase(cu, it, date);
         if (cu != null && it != null && dateBox.getValue() != null) {
-            if (ps.addPurchase(purchase)) {
+            if (ps.savePurchase(purchase)) {
                 purchaseList.getItems().add(purchase);
             } else {
                 alert.setContentText(Constantes.PURCHASE_NOT_ADDED);

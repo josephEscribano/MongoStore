@@ -21,11 +21,11 @@ public interface DAOItems {
      
     int update(Item t);
      
-    int deletePurchasesAndItem(int id);
+    int deletePurchasesAndItem(Item item);
 
-    int deleteItem(int id);
+    int deleteItem(Item item);
 
     Item findItemByID(int id);
 
-    int checkItemReview(int id);
+
 }

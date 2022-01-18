@@ -33,8 +33,8 @@ public class ReviewsServices {
         return dao.getDAOReviews().getAll();
     }
 
-    public int deleteReview( int id) {
-        return dao.getDAOReviews().delete(id);
+    public int deleteReview( Review review) {
+        return dao.getDAOReviews().delete(review);
     }
 
     public List<Review> searchByItem(int id) {

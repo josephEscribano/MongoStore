@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
+//@NamedQuery(name = "deletePurchaseById", query = "delete from Purchase where itemsByIdItem.id = :id")
 @Entity
 @Table(name = "Purchases")
 @NoArgsConstructor
@@ -63,7 +64,7 @@ public class Purchase {
 
     @Override
     public String toString() {
-        return "ID: " + idPurchase + "  Customer: " + customerByIdCustomer.getIdCustomer() + "  Item: " + itemByIdItem.getIdItem() + "  Date: " + date;
+        return "ID: " + idPurchase + "  Customer: " + customerByIdCustomer.getName() + "  Item: " + itemByIdItem.getName() + "  Date: " + date;
     }
 
     @Override

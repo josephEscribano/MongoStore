@@ -36,21 +36,18 @@ public class FXMLDeleteController implements Initializable {
 
     public void deletePurchase() {
 
-        Purchase p = purchaseBox.getSelectionModel().getSelectedItem();
+        Purchase purchase = purchaseBox.getSelectionModel().getSelectedItem();
         PurchasesServices purchasesServices = new PurchasesServices();
 
-        if (p != null) {
-            int resultado = purchasesServices.deletePurchase(p.getIdPurchase());
+        if (purchase != null) {
+            int resultado = purchasesServices.deletePurchase(purchase);
             if (resultado > 0) {
-                purchaseBox.getItems().remove(p);
+                purchaseBox.getItems().remove(purchase);
             } else if (resultado == -2){
                 alert.setContentText(Constantes.PURCHASE_NOT_DELETED);
                 alert.showAndWait();
             }else if (resultado == -1){
                 alert.setContentText(Constantes.EXIST_REVIEW_ASSOCIATED);
-                alert.showAndWait();
-            } else if (resultado == 0){
-                alert.setContentText(Constantes.PURCHASE_NOT_FOUND);
                 alert.showAndWait();
             }
 

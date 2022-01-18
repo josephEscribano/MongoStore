@@ -5,48 +5,50 @@
  */
 package services;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import dao.DAOFactory;
 import model.Purchase;
 
+import java.util.List;
+
 public class PurchasesServices {
-    private DAOFactory dao;
+    private final DAOFactory dao;
 
 
     public PurchasesServices() {
         dao = new DAOFactory();
     }
-    public int updatePurchases(Purchase purchase){
+
+    public int updatePurchases(Purchase purchase) {
         return dao.getDAOPurchases().update(purchase);
     }
+
     public List<Purchase> getAllPurchases() {
         return dao.getDAOPurchases().getAll();
     }
 
-    public List<Purchase> getPurchasesForUser(int id){
+    public List<Purchase> getPurchasesForUser(int id) {
         return dao.getDAOPurchases().getAllPurchaseForUser(id);
     }
-    public int getPurchasesByReviewId(int id){
+
+    public int getPurchasesByReviewId(int id) {
         return dao.getDAOPurchases().getPurchasesByReviewId(id);
     }
 
-    public int deletePurchase(int id ) {
+    public int deletePurchase(Purchase purchase) {
         int confirmacion = -1;
         //Si confirmacion es -1 quiere decir que tiene reviews asociadas.
-        if (getPurchasesByReviewId(id) == 0){
-            confirmacion = dao.getDAOPurchases().delete(id);
+        if (getPurchasesByReviewId(purchase.getIdPurchase()) == 0) {
+            confirmacion = dao.getDAOPurchases().delete(purchase);
         }
         return confirmacion;
-     }
+    }
 
-    public boolean addPurchase(Purchase purchase) {
+    public boolean savePurchase(Purchase purchase) {
         return dao.getDAOPurchases().save(purchase);
 
     }
 
-    public List<Purchase> findPurchaseByDate(java.util.Date date){
+    public List<Purchase> findPurchaseByDate(java.util.Date date) {
         return dao.getDAOPurchases().findPurchaseByDate(date);
     }
 

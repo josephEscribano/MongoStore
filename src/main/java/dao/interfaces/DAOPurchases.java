@@ -31,6 +31,6 @@ public interface DAOPurchases {
     int update(Purchase t);
 
     int searchCustomerByid(int id );
-    int delete(int id );
+    int delete(Purchase purchase );
     List<Purchase> findPurchaseByDate(java.util.Date date);
 }

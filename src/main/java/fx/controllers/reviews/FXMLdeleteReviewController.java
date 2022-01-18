@@ -57,7 +57,7 @@ public class FXMLdeleteReviewController implements Initializable {
         ReviewsServices reviewsServices = new ReviewsServices();
         Review review = reviewBox.getSelectionModel().getSelectedItem();
         if (review != null){
-            if (reviewsServices.deleteReview(review.getIdReview()) > 0){
+            if (reviewsServices.deleteReview(review) > 0){
                 reviewBox.getItems().removeIf(it -> it.getIdReview() == review.getIdReview());
             }else{
                 alert.setContentText(Constantes.REVIEW_NOT_EXIST);

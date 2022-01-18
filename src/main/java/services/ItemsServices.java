@@ -32,24 +32,26 @@ public class ItemsServices {
 
     }
 
-    public int checkDelete(int id,boolean confirm){
+    public int checkDelete(Item item,boolean confirm){
         int confirmacion = -6;
-        int resultado = dao.getDAOItems().checkItemReview(id);
-        int resultadoPurchases = dao.getDAOPurchases().getPurchasesByItemId(id);
+        int resultado = dao.getDAOReviews().checkItemReview(item.getIdItem());
+        int resultadoPurchases = dao.getDAOPurchases().getPurchasesByItemId(item.getIdItem());
         if (resultado > 0){
             confirmacion = -1;
         }else if(resultadoPurchases > 0 && !confirm){
             confirmacion = -3;
         }else if (resultadoPurchases > 0 && confirm){
-            if (dao.getDAOItems().deletePurchasesAndItem(id) == -2){
-                confirmacion = dao.getDAOItems().deletePurchasesAndItem(id);
+            int resultDeletePurchaseAndItem = dao.getDAOItems().deletePurchasesAndItem(item);
+            if ( resultDeletePurchaseAndItem == -2){
+                confirmacion = resultDeletePurchaseAndItem;
             }else{
                 confirmacion = -4;
             }
 
         } else if(resultadoPurchases == 0){
-            if ( dao.getDAOItems().deleteItem(id) == -2){
-                confirmacion =  dao.getDAOItems().deleteItem(id);
+            int resultDeleteItem = dao.getDAOItems().deleteItem(item);
+            if ( resultDeleteItem == -2){
+                confirmacion =  resultDeleteItem;
             }else{
                 confirmacion = -5;
             }

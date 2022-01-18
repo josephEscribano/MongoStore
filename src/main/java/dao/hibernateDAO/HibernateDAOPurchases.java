@@ -9,6 +9,7 @@ import model.Purchase;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.dao.DataIntegrityViolationException;
 import utils.HibernateQuerys;
 
 import java.util.Date;
@@ -19,12 +20,38 @@ public class HibernateDAOPurchases implements DAOPurchases {
 
     @Override
     public int getPurchasesByItemId(int id) {
-        return 0;
+        Session session = null;
+        int confirmacion = 0;
+        try {
+            session = HibernateUtils.getSession();
+            String query = "select count(p.idPurchase) from Purchase p where p.itemsByIdItem.id = :id";
+            confirmacion = (session.createQuery(query,Long.class).setParameter("id",id).uniqueResult()).intValue();
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return confirmacion;
     }
 
     @Override
     public int getPurchasesByReviewId(int id) {
-        return 0;
+        Session session = null;
+        int confirmacion = 0;
+        try{
+            session = HibernateUtils.getSession();
+            String query = "select count (*) from Purchase p join Review r on p.idPurchase = r.purchasesByIdPurchase.idPurchase where r.purchasesByIdPurchase.idPurchase = :id";
+            confirmacion = (session.createQuery(query,Long.class).setParameter("id",id).uniqueResult()).intValue();
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return confirmacion;
     }
 
     @Override
@@ -47,17 +74,62 @@ public class HibernateDAOPurchases implements DAOPurchases {
 
     @Override
     public List<Purchase> getAllPurchaseForUser(int id) {
-        return null;
+        Session session = null;
+        List<Purchase> list = null;
+        try {
+            session = HibernateUtils.getSession();
+            list = session.createQuery("from Purchase where customersByIdCustomer.id = :id",Purchase.class).setParameter("id",id).list();
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return list;
     }
 
     @Override
-    public boolean save(Purchase t) {
-        return false;
+    public boolean save(Purchase purchase) {
+        Session session = null;
+        boolean confirmacion = false;
+        try{
+            session = HibernateUtils.getSession();
+            session.save(purchase);
+            confirmacion = true;
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return confirmacion;
     }
 
     @Override
-    public int update(Purchase t) {
-        return 0;
+    public int update(Purchase purchase) {
+        Session session = null;
+        Transaction transaction = null;
+        int confirmacion = 1;
+        try{
+            session = HibernateUtils.getSession();
+            transaction = session.beginTransaction();
+            session.update(purchase);
+
+            transaction.commit();
+            confirmacion = 0;
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+            if (transaction != null){
+                transaction.rollback();
+            }
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return confirmacion;
     }
 
     @Override
@@ -86,8 +158,34 @@ public class HibernateDAOPurchases implements DAOPurchases {
     }
 
     @Override
-    public int delete(int id) {
-        return 0;
+    public int delete(Purchase purchase) {
+        Session session = null;
+        Transaction transaction = null;
+        int confirmacion ;
+        try {
+            session = HibernateUtils.getSession();
+            transaction = session.beginTransaction();
+            session.delete(purchase);
+            transaction.commit();
+            confirmacion = 1;
+        }catch (DataIntegrityViolationException e){
+            log.error(e.getMessage(),e);
+            if (transaction != null){
+                transaction.rollback();
+            }
+            confirmacion = -2;
+        } catch (Exception e){
+            log.error(e.getMessage(),e);
+            if (transaction != null){
+                transaction.rollback();
+            }
+            confirmacion = -1;
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return confirmacion;
     }
 
     @Override

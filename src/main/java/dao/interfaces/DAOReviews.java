@@ -27,7 +27,9 @@ public interface DAOReviews {
      
     int update(Review t);
      
-    int delete(int id);
+    int delete(Review review);
 
     List<Review> getReviewByCustomer(int id);
+
+    int checkItemReview(int id);
 }
