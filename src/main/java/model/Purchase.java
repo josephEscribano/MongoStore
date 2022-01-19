@@ -8,7 +8,31 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
-//@NamedQuery(name = "deletePurchaseById", query = "delete from Purchase where itemsByIdItem.id = :id")
+@NamedQueries({
+        @NamedQuery(name  = "purchaseByItem",
+        query = "select count(p.idPurchase) from Purchase p where p.itemsByIdItem.id = :id"
+        ),
+        @NamedQuery(name = "purchaseByReview",
+        query = "select count (*) from Purchase p join Review r on p.idPurchase = r.purchasesByIdPurchase.idPurchase where r.purchasesByIdPurchase.idPurchase = :id"
+        ),
+        @NamedQuery(name = "getPurchase",
+        query = "from Purchase"
+        ),
+        @NamedQuery(name = "getPurchasesByUser",
+        query = "from Purchase where customersByIdCustomer.id = :id"
+        ),
+        @NamedQuery(name = "countPurhcaseByCustomer",
+        query = "select count(p.customersByIdCustomer.id) from Purchase p where p.customersByIdCustomer.id = :id"),
+        @NamedQuery(name = "purchaseByDate",
+        query = "from Purchase where date = :date"),
+        @NamedQuery(name = "purchaseBetweenDates",
+        query = "from Purchase where date between :initialDate and :finalDate"
+        ),
+        @NamedQuery(name = "getPurchasesByItem",
+                query = "from Purchase where itemsByIdItem.idItem = :id"
+        )
+
+})
 @Entity
 @Table(name = "Purchases")
 @NoArgsConstructor

@@ -25,9 +25,15 @@ public class FXMLUpdateCustomerUserController {
     public void showInfo() {
         CustomersServices customersServices = new CustomersServices();
         Customer customer = customersServices.searchById(principal.getIdUser());
-        nameBox.setText(customer.getName());
-        phoneBox.setText(customer.getTelephone());
-        addressBox.setText(customer.getAddress());
+        if (customer != null){
+            nameBox.setText(customer.getName());
+            phoneBox.setText(customer.getTelephone());
+            addressBox.setText(customer.getAddress());
+        }else{
+            alert.setContentText(Constantes.NOT_FOUNT_CUSTOMER);
+            alert.showAndWait();
+        }
+
     }
 
     public void updateCustomer() {

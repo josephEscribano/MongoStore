@@ -34,8 +34,8 @@ public class HibernateDAOUsers implements DAOUsers {
         Session session = null;
         try {
             session = HibernateUtils.getSession();
-            String query = "select count(*) from User where name = :name";
-            confimacion= (session.createQuery(query,Long.class).setParameter("name",name).uniqueResult()).intValue();
+
+            confimacion= (session.createNamedQuery("userByName",Long.class).setParameter("name",name).uniqueResult()).intValue();
         }catch (Exception e){
             log.error(e.getMessage(),e);
         }finally {

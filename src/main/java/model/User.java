@@ -8,7 +8,16 @@ import org.codehaus.plexus.classworlds.strategy.Strategy;
 import javax.persistence.*;
 import java.util.Objects;
 
-@NamedQuery(name = "findUser", query = "select u from User u where name = :name and password = :pass")
+
+
+@NamedQueries({
+        @NamedQuery(
+                name = "findUser",
+                query = "select u from User u where name = :name and password = :pass"),
+        @NamedQuery(name = "userByName",
+        query = "select count(*) from User where name = :name"
+        )
+})
 @Entity
 @Table(name = "Users")
 @NoArgsConstructor

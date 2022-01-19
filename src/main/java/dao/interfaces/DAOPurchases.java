@@ -6,10 +6,12 @@
 package dao.interfaces;
 
 import model.Customer;
+import model.Item;
 import model.Purchase;
 import model.Review;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -31,6 +33,12 @@ public interface DAOPurchases {
     int update(Purchase t);
 
     int searchCustomerByid(int id );
+
     int delete(Purchase purchase );
-    List<Purchase> findPurchaseByDate(java.util.Date date);
+
+    List<Purchase> findPurchaseByDate(LocalDate localDate);
+
+    List<Purchase> purchasesBetweenDates(LocalDate initialDate, LocalDate finalDate);
+
+    List<Purchase> getPurchasesByItem(int id);
 }

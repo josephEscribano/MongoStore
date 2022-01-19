@@ -33,7 +33,7 @@ public class HibernateDAOCustomers implements DAOCustomers {
         List<Customer> list = null;
         try{
             session = HibernateUtils.getSession();
-            list = session.createQuery(HibernateQuerys.FROM_CUSTOMER,Customer.class).list();
+            list = session.createNamedQuery("getCustomers",Customer.class).getResultList();
         }catch (Exception e){
             log.error(e.getMessage(),e);
         }finally {
@@ -126,6 +126,21 @@ public class HibernateDAOCustomers implements DAOCustomers {
 
     @Override
     public Customer findCustomerByID(int id) {
-        return null;
+        Session session = null;
+        Customer customer = null;
+        try {
+            session = HibernateUtils.getSession();
+            customer = session.createNamedQuery("selectCustomer",Customer.class)
+                    .setParameter("id",id)
+                    .uniqueResult();
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return customer;
     }
 }

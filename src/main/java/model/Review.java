@@ -7,6 +7,21 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@NamedQueries({@NamedQuery(
+        name = "reviewsByUser",
+        query = "from Review r where r.purchasesByIdPurchase.customersByIdCustomer.idCustomer = :id"
+),
+        @NamedQuery(
+                name = "checkItemReview",
+                query = "select count(r.idReview) from Review r join Purchase  p on p.idPurchase = r.purchasesByIdPurchase.idPurchase where p.itemsByIdItem.id = :id"
+        ),
+        @NamedQuery(name = "getReviewsByItem",
+        query = "from Review where purchasesByIdPurchase.itemsByIdItem.idItem = :id"),
+        @NamedQuery(name = "getReviewsByCustomer",
+        query = "from Review where purchasesByIdPurchase.customersByIdCustomer.idCustomer = :id")
+}
+)
+
 @Entity
 @Table(name = "Reviews")
 @NoArgsConstructor

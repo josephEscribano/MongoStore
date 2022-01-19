@@ -8,6 +8,7 @@ package services;
 import dao.DAOFactory;
 import model.Purchase;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class PurchasesServices {
@@ -48,8 +49,16 @@ public class PurchasesServices {
 
     }
 
-    public List<Purchase> findPurchaseByDate(java.util.Date date) {
-        return dao.getDAOPurchases().findPurchaseByDate(date);
+    public List<Purchase> findPurchaseByDate(LocalDate localDate) {
+        return dao.getDAOPurchases().findPurchaseByDate(localDate);
+    }
+
+    public List<Purchase> purchasesBetweenDates(LocalDate initialDate, LocalDate finalDate){
+        return dao.getDAOPurchases().purchasesBetweenDates(initialDate, finalDate);
+    }
+
+    public List<Purchase> getPurchasesByItem(int id) {
+        return dao.getDAOPurchases().getPurchasesByItem(id);
     }
 
 }

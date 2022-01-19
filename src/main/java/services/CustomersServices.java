@@ -9,6 +9,7 @@ import java.util.List;
 
 import dao.DAOFactory;
 import model.Customer;
+import model.Purchase;
 import model.User;
 
 public class CustomersServices {
@@ -53,4 +54,7 @@ public class CustomersServices {
 
     }
 
+    public List<Purchase> getPurchasesByCustomer(int idCustomer) {
+        return dao.getDAOPurchases().getAllPurchaseForUser(idCustomer);
+    }
 }

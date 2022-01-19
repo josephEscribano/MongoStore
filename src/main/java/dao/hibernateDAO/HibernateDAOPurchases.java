@@ -12,6 +12,7 @@ import org.hibernate.query.Query;
 import org.springframework.dao.DataIntegrityViolationException;
 import utils.HibernateQuerys;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -24,8 +25,7 @@ public class HibernateDAOPurchases implements DAOPurchases {
         int confirmacion = 0;
         try {
             session = HibernateUtils.getSession();
-            String query = "select count(p.idPurchase) from Purchase p where p.itemsByIdItem.id = :id";
-            confirmacion = (session.createQuery(query,Long.class).setParameter("id",id).uniqueResult()).intValue();
+            confirmacion = (session.createNamedQuery("purchaseByItem",Long.class).setParameter("id",id).uniqueResult()).intValue();
         }catch (Exception e){
             log.error(e.getMessage(),e);
         }finally {
@@ -42,8 +42,7 @@ public class HibernateDAOPurchases implements DAOPurchases {
         int confirmacion = 0;
         try{
             session = HibernateUtils.getSession();
-            String query = "select count (*) from Purchase p join Review r on p.idPurchase = r.purchasesByIdPurchase.idPurchase where r.purchasesByIdPurchase.idPurchase = :id";
-            confirmacion = (session.createQuery(query,Long.class).setParameter("id",id).uniqueResult()).intValue();
+            confirmacion = (session.createNamedQuery("purchaseByReview",Long.class).setParameter("id",id).uniqueResult()).intValue();
         }catch (Exception e){
             log.error(e.getMessage(),e);
         }finally {
@@ -60,7 +59,7 @@ public class HibernateDAOPurchases implements DAOPurchases {
         List<Purchase> list = null;
         try{
             session = HibernateUtils.getSession();
-            list = session.createQuery(HibernateQuerys.FROM_PURCHASE_,Purchase.class).list();
+            list = session.createNamedQuery("getPurchase",Purchase.class).getResultList();
         }catch (Exception e){
             log.error(e.getMessage(),e);
         }finally {
@@ -78,7 +77,7 @@ public class HibernateDAOPurchases implements DAOPurchases {
         List<Purchase> list = null;
         try {
             session = HibernateUtils.getSession();
-            list = session.createQuery("from Purchase where customersByIdCustomer.id = :id",Purchase.class).setParameter("id",id).list();
+            list = session.createNamedQuery("getPurchasesByUser",Purchase.class).setParameter("id",id).getResultList();
         }catch (Exception e){
             log.error(e.getMessage(),e);
         }finally {
@@ -140,8 +139,7 @@ public class HibernateDAOPurchases implements DAOPurchases {
         try{
             session = HibernateUtils.getSession();
             transaction = session.beginTransaction();
-            String query = "select count(p.customersByIdCustomer.id) from Purchase p where p.customersByIdCustomer.id = :id";
-            int numero = (session.createQuery(query,Long.class).setParameter("id",id).uniqueResult()).intValue();
+            int numero = (session.createNamedQuery("countPurhcaseByCustomer",Long.class).setParameter("id",id).uniqueResult()).intValue();
             transaction.commit();
             confirmacion = numero;
         }catch (Exception e){
@@ -189,7 +187,62 @@ public class HibernateDAOPurchases implements DAOPurchases {
     }
 
     @Override
-    public List<Purchase> findPurchaseByDate(Date date) {
-        return null;
+    public List<Purchase> findPurchaseByDate(LocalDate localDate) {
+        Session session = null;
+        List<Purchase> list = null;
+        try {
+            session = HibernateUtils.getSession();
+            list = session.createNamedQuery("purchaseByDate",Purchase.class)
+                    .setParameter("date",localDate)
+                    .getResultList();
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return list;
     }
+
+    @Override
+    public List<Purchase> purchasesBetweenDates(LocalDate initialDate, LocalDate finalDate) {
+        Session session = null;
+        List<Purchase> list = null;
+        try {
+            session = HibernateUtils.getSession();
+            list = session.createNamedQuery("purchaseBetweenDates",Purchase.class)
+                    .setParameter("initialDate",initialDate)
+                    .setParameter("finalDate",finalDate)
+                    .getResultList();
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return list;
+    }
+
+    @Override
+    public List<Purchase> getPurchasesByItem(int id) {
+        Session session = null;
+        List<Purchase> list = null;
+        try {
+            session = HibernateUtils.getSession();
+            list = session.createNamedQuery("getPurchasesByItem",Purchase.class)
+                    .setParameter("id",id)
+                    .getResultList();
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return list;
+    }
+
+
 }

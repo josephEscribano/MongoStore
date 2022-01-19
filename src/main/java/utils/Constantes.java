@@ -45,4 +45,6 @@ public class Constantes {
     public static final String USERNAME_AND_PASSWORD_PLEASE = "enter a username and password, please";
     public static final String CHOSE_OTHER = "there is already an existing user with this name, please choose another one";
     public static final String CUSTOMER_HAS_BEEN_UPDATE = "Customer has been update";
+    public static final String NOT_FOUNT_CUSTOMER = "The customer has not been found";
+    public static final String SELECT_DATE = "Please, select a initial date and final date";
 }

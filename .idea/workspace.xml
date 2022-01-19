@@ -4,35 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="">
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="faltan review y las listas">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOCustomers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOPurchases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOReviews.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOPurchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOReviews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLdeleteReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLdeleteReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLListCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLListCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDatePurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDatePurchasesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLListPurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLListPurchasesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Purchase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/items/FXMLDeleteItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/items/FXMLDeleteItemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLAddPurchasesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLAddPurchasesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLDeleteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLDeleteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLdeleteReviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLdeleteReviewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Purchase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Purchase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Constantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/customers/FXMLListCustomer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/customers/FXMLListCustomer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLListPurchases.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLListPurchases.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Review.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,6 +230,7 @@
       <workItem from="1641814508830" duration="5524000" />
       <workItem from="1641899136455" duration="6158000" />
       <workItem from="1641987121742" duration="5550000" />
+      <workItem from="1642612285731" duration="10413000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>

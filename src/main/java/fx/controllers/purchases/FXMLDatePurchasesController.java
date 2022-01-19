@@ -38,7 +38,7 @@ public class FXMLDatePurchasesController implements Initializable {
         PurchasesServices purchasesServices = new PurchasesServices();
         java.util.Date date = Date.from(dateBox.getValue().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
 
-        List<Purchase> listPurchases = purchasesServices.findPurchaseByDate(date);
+        List<Purchase> listPurchases = purchasesServices.findPurchaseByDate(dateBox.getValue());
         if (!listPurchases.isEmpty()) {
             purchaseList.getItems().setAll(listPurchases);
         } else {

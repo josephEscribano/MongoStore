@@ -7,7 +7,12 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
-@NamedQuery(name = "getAllCustomer", query = "from Customer")
+@NamedQueries({
+        @NamedQuery(name = "getCustomers",
+        query = "from Customer"),
+        @NamedQuery(name = "selectCustomer",
+        query = "from Customer where idCustomer = :id")
+})
 @Entity
 @Table(name = "Customers")
 @NoArgsConstructor

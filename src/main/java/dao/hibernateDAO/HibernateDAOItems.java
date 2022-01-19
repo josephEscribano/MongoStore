@@ -19,7 +19,7 @@ public class HibernateDAOItems implements DAOItems {
         List<Item> list = null;
         try {
             session = HibernateUtils.getSession();
-            list = session.createQuery(HibernateQuerys.FROM_ITEM_, Item.class).list();
+            list = session.createNamedQuery("getItems", Item.class).getResultList();
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         } finally {
@@ -81,7 +81,7 @@ public class HibernateDAOItems implements DAOItems {
         try {
             session = HibernateUtils.getSession();
             transaction = session.beginTransaction();
-            session.createQuery("delete from Purchase where itemsByIdItem.id = :id").setParameter("id", item.getIdItem()).executeUpdate();
+            session.createNamedQuery("deleteByItem").setParameter("id", item.getIdItem()).executeUpdate();
             session.delete(item);
             transaction.commit();
             confirmacion = 0;
@@ -125,7 +125,21 @@ public class HibernateDAOItems implements DAOItems {
 
     @Override
     public Item findItemByID(int id) {
-        return null;
+        Session session = null;
+        Item item = null;
+        try{
+            session = HibernateUtils.getSession();
+            item = session.createNamedQuery("itemByID",Item.class)
+                    .setParameter("id",id)
+                    .uniqueResult();
+        }catch (Exception e) {
+            log.error(e.getMessage(), e);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return item;
     }
 
 

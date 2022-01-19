@@ -8,9 +8,10 @@ import model.Purchase;
 import model.Review;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 import utils.HibernateQuerys;
 
+import javax.management.Query;
+import javax.persistence.NamedQuery;
 import java.util.List;
 
 @Log4j2
@@ -23,7 +24,22 @@ public class HibernateDAOReviews implements DAOReviews {
 
     @Override
     public List<Review> getReviewByItem(int id) {
-        return null;
+        Session session = null;
+        List<Review> list = null;
+        try {
+            session = HibernateUtils.getSession();
+            list = session.createNamedQuery("getReviewsByItem",Review.class)
+                    .setParameter("id",id)
+                    .getResultList();
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+        }finally {
+            if (session != null){
+                session.close();
+            }
+
+        }
+        return list;
     }
 
     @Override
@@ -56,9 +72,10 @@ public class HibernateDAOReviews implements DAOReviews {
         List<Review> list = null;
         try {
             session = HibernateUtils.getSession();
-            list = session.createQuery("from Review r join Purchase p on r.purchasesByIdPurchase.idPurchase = p.idPurchase where p.customersByIdCustomer.idCustomer = :id",Review.class)
+
+            list = session.createNamedQuery("reviewsByUser" ,Review.class)
                     .setParameter("id",id)
-                    .list();
+                    .getResultList();
         }catch (Exception e){
             log.error(e.getMessage(),e);
         }finally {
@@ -142,7 +159,21 @@ public class HibernateDAOReviews implements DAOReviews {
 
     @Override
     public List<Review> getReviewByCustomer(int id) {
-        return null;
+        Session session = null;
+        List<Review> list = null;
+        try{
+            session = HibernateUtils.getSession();
+            list = session.createNamedQuery("getReviewsByCustomer",Review.class)
+                    .setParameter("id",id)
+                    .getResultList();
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+        }finally {
+            if (session != null){
+                session.close();
+            }
+        }
+        return list;
     }
 
     @Override
@@ -152,8 +183,7 @@ public class HibernateDAOReviews implements DAOReviews {
         int confirmacion = -1;
         try{
             session = HibernateUtils.getSession();
-            String query = "select count(r.idReview) from Review r join Purchase  p on p.idPurchase = r.purchasesByIdPurchase.idPurchase where p.itemsByIdItem.id = :id";
-            confirmacion = (session.createQuery(query,Long.class).setParameter("id",id).uniqueResult()).intValue();
+            confirmacion = (session.createNamedQuery("checkItemReview",Long.class).setParameter("id",id).uniqueResult()).intValue();
         }catch (Exception e){
             log.error(e.getMessage(),e);
         }finally {
