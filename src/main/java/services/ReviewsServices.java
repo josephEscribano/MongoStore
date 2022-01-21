@@ -8,6 +8,7 @@ package services;
 import java.util.List;
 
 import dao.DAOFactory;
+import io.vavr.control.Either;
 import model.Review;
 public class ReviewsServices {
 
@@ -48,5 +49,21 @@ public class ReviewsServices {
 
     public List<Review> searchByCustomer(int id) {
         return dao.getDAOReviews().getReviewByCustomer(id);
+    }
+
+    public Either<String,List<Review>> reviewsOrderByDateAsc(int id){
+        return dao.getDAOReviews().reviewsOrderByDateAsc(id);
+    }
+
+    public Either<String,List<Review>> reviewsOrderByDateDesc(int id){
+        return dao.getDAOReviews().reviewsOrderByDateDesc(id);
+    }
+
+    public Either<String,List<Review>> reviewsOrderByRaitingAsc(int id){
+        return dao.getDAOReviews().reviewsOrderByRaitingAsc(id);
+    }
+
+    public Either<String,List<Review>> reviewsOrderByRaitingDesc(int id){
+        return dao.getDAOReviews().reviewsOrderByRaitingDesc(id);
     }
 }

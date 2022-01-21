@@ -13,7 +13,12 @@ import java.util.Objects;
         @NamedQuery(name = "deleteByItem",
         query = "delete from Purchase where itemsByIdItem.id = :id"),
         @NamedQuery(name = "itemByID",
-        query = "from Item where idItem = :id")
+        query = "from Item where idItem = :id"),
+        @NamedQuery(name = "purchaseByMonth",
+        query = "select count(*) from Purchase where Month(date) = :mes and Year(date) = :year and itemsByIdItem.idItem = :id"),
+        @NamedQuery(name = "averageRaitingByItem",
+        query = "select avg(r.rating) from Review r where purchasesByIdPurchase.itemsByIdItem.idItem = :id")
+
 })
 @Entity
 @Table(name = "Items")
@@ -96,6 +101,10 @@ public class Item {
     @Override
     public String toString() {
         return idItem + " " + name + " " + price + "€";
+    }
+
+    public String toStringAlt(){
+        return name + " " + company;
     }
 
     @OneToMany(mappedBy = "itemsByIdItem")

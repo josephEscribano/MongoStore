@@ -5,6 +5,7 @@
  */
 package dao.interfaces;
 
+import io.vavr.control.Either;
 import model.Customer;
 import model.Item;
 import model.Purchase;
@@ -41,4 +42,6 @@ public interface DAOPurchases {
     List<Purchase> purchasesBetweenDates(LocalDate initialDate, LocalDate finalDate);
 
     List<Purchase> getPurchasesByItem(int id);
+
+    Either<String, Integer> numbersPurchasesByMonth(int mes,int year, int id);
 }

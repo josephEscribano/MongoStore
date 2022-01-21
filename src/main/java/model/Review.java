@@ -16,9 +16,19 @@ import java.util.Objects;
                 query = "select count(r.idReview) from Review r join Purchase  p on p.idPurchase = r.purchasesByIdPurchase.idPurchase where p.itemsByIdItem.id = :id"
         ),
         @NamedQuery(name = "getReviewsByItem",
-        query = "from Review where purchasesByIdPurchase.itemsByIdItem.idItem = :id"),
+                query = "from Review where purchasesByIdPurchase.itemsByIdItem.idItem = :id"),
         @NamedQuery(name = "getReviewsByCustomer",
-        query = "from Review where purchasesByIdPurchase.customersByIdCustomer.idCustomer = :id")
+                query = "from Review where purchasesByIdPurchase.customersByIdCustomer.idCustomer = :id"),
+        @NamedQuery(name = "countReviewsByItem",
+                query = "select count(*) from Review where purchasesByIdPurchase.itemsByIdItem.idItem = :id"),
+        @NamedQuery(name = "reviewOrderByDateAsc",
+                query = "from Review where purchasesByIdPurchase.itemsByIdItem.idItem = :id order by date asc "),
+        @NamedQuery(name = "reviewOrderByDateDesc",
+                query = "from Review where purchasesByIdPurchase.itemsByIdItem.idItem = :id order by date desc "),
+        @NamedQuery(name = "reviewOrderByRaitinAsc",
+                query = "from Review where purchasesByIdPurchase.itemsByIdItem.idItem = :id order by rating asc "),
+        @NamedQuery(name = "reviewOrderByRaitinDesc",
+                query = "from Review where purchasesByIdPurchase.itemsByIdItem.idItem = :id order by rating desc ")
 }
 )
 

@@ -2,6 +2,7 @@ package dao.hibernateDAO;
 
 import dao.HibernateUtils;
 import dao.interfaces.DAOPurchases;
+import io.vavr.control.Either;
 import lombok.extern.log4j.Log4j2;
 import model.Customer;
 import model.Item;
@@ -10,6 +11,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.dao.DataIntegrityViolationException;
+import utils.Constantes;
 import utils.HibernateQuerys;
 
 import java.time.LocalDate;
@@ -242,6 +244,28 @@ public class HibernateDAOPurchases implements DAOPurchases {
             }
         }
         return list;
+    }
+
+    @Override
+    public Either<String, Integer> numbersPurchasesByMonth(int mes, int year,int id) {
+        Session session = null;
+        Either<String, Integer> result;
+        try {
+            session = HibernateUtils.getSession();
+            result = Either.right((session.createNamedQuery("purchaseByMonth",Long.class)
+                    .setParameter("year",year)
+                    .setParameter("mes",mes)
+                    .setParameter("id",id)
+                    .uniqueResult()).intValue());
+        }catch (Exception e) {
+            log.error(e.getMessage(), e);
+            result = Either.left(Constantes.CONNECTION_ERROR);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return result;
     }
 
 

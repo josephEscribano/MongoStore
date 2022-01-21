@@ -59,6 +59,12 @@
         </dependency>
 
         <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>0.10.4</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-base</artifactId>
             <version>17.0.0.1</version>
@@ -98,6 +104,7 @@
             <artifactId>log4j-api</artifactId>
             <version>2.14.1</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>

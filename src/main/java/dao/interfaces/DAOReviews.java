@@ -5,6 +5,7 @@
  */
 package dao.interfaces;
 
+import io.vavr.control.Either;
 import model.Review;
 
 import java.util.List;
@@ -32,4 +33,16 @@ public interface DAOReviews {
     List<Review> getReviewByCustomer(int id);
 
     int checkItemReview(int id);
+
+    Either<String, Integer> averageRaitingByItem(int id);
+
+    double countReviewsByItem(int id);
+
+    Either<String,List<Review>> reviewsOrderByDateAsc(int id);
+
+    Either<String,List<Review>> reviewsOrderByDateDesc(int id);
+
+    Either<String,List<Review>> reviewsOrderByRaitingAsc(int id);
+
+    Either<String,List<Review>> reviewsOrderByRaitingDesc(int id);
 }

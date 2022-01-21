@@ -47,4 +47,7 @@ public class Constantes {
     public static final String CUSTOMER_HAS_BEEN_UPDATE = "Customer has been update";
     public static final String NOT_FOUNT_CUSTOMER = "The customer has not been found";
     public static final String SELECT_DATE = "Please, select a initial date and final date";
+    public static final String CONNECTION_ERROR = "connection error";
+    public static final String ERROR_PANTALLA = "the screen could not be loaded";
+    public static final String MENSAJE_ORDENACION = "please, select a type of sorting ";
 }

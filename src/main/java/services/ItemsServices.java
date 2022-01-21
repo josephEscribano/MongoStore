@@ -8,8 +8,10 @@ package services;
 import java.util.List;
 
 import dao.DAOFactory;
+import io.vavr.control.Either;
 import model.Item;
 import model.Purchase;
+import model.Review;
 
 public class ItemsServices {
 
@@ -62,11 +64,25 @@ public class ItemsServices {
         return confirmacion;
     }
 
+    public Either<String, Integer> numbersPurchasesByMonth(int mes,int year,int id){
+        return dao.getDAOPurchases().numbersPurchasesByMonth(mes,year,id);
+    }
 
-
+    public Either<String, Integer> averageRaitingByItem(int id){
+        return dao.getDAOReviews().averageRaitingByItem(id);
+    }
 
     public Item findItemByID(int id){
         return dao.getDAOItems().findItemByID(id);
     }
+
+    public double countReviewsByItem(int id){
+        return dao.getDAOReviews().countReviewsByItem(id);
+    }
+
+    public List<Review> searchByItem(int id) {
+        return dao.getDAOReviews().getReviewByItem(id);
+    }
+
 
 }
