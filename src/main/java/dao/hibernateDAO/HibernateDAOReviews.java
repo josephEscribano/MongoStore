@@ -321,5 +321,25 @@ public class HibernateDAOReviews implements DAOReviews {
         return result;
     }
 
+    @Override
+    public Either<String, List<Review>> reviewsByRaiting(int raiting) {
+        Session session = null;
+        Either<String, List<Review>> result;
+        try {
+            session = HibernateUtils.getSession();
+            result = Either.right(session.createNamedQuery("getReviewsByRaiting",Review.class)
+                    .setParameter("raiting",raiting)
+                    .getResultList());
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            result = Either.left(Constantes.CONNECTION_ERROR);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return result;
+    }
+
 
 }

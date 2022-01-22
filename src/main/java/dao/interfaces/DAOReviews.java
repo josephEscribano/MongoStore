@@ -18,6 +18,7 @@ public interface DAOReviews {
     Review get(int id);
 
     List<Review> getReviewByItem (int id);
+
     List<Review> getReviewByItemByUser(int idUser, int idItem);
 
     List<Review> getAll();
@@ -45,4 +46,6 @@ public interface DAOReviews {
     Either<String,List<Review>> reviewsOrderByRaitingAsc(int id);
 
     Either<String,List<Review>> reviewsOrderByRaitingDesc(int id);
+
+    Either<String,List<Review>> reviewsByRaiting(int raiting);
 }

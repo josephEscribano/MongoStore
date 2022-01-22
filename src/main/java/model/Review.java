@@ -28,7 +28,9 @@ import java.util.Objects;
         @NamedQuery(name = "reviewOrderByRaitinAsc",
                 query = "from Review where purchasesByIdPurchase.itemsByIdItem.idItem = :id order by rating asc "),
         @NamedQuery(name = "reviewOrderByRaitinDesc",
-                query = "from Review where purchasesByIdPurchase.itemsByIdItem.idItem = :id order by rating desc ")
+                query = "from Review where purchasesByIdPurchase.itemsByIdItem.idItem = :id order by rating desc "),
+        @NamedQuery(name = "getReviewsByRaiting",
+                query = "from Review  where rating = :raiting")
 }
 )
 

@@ -66,4 +66,12 @@ public class ReviewsServices {
     public Either<String,List<Review>> reviewsOrderByRaitingDesc(int id){
         return dao.getDAOReviews().reviewsOrderByRaitingDesc(id);
     }
+
+    public Either<String, List<Review>> reviewsByRaiting(int raiting){
+        return dao.getDAOReviews().reviewsByRaiting(raiting);
+    }
+
+    public List<Review> getReviewByItem(int id){
+        return dao.getDAOReviews().getReviewByItem(id);
+    }
 }

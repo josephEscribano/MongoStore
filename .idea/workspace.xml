@@ -4,45 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="faltan list items y list reviews 23">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLModalInfoReviews.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/FXMLModalInfoReviews.fxml" afterDir="false" />
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="jhghjglkjjk">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9bb14b460102634d51ecf410dfc14c6f812797e0" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9bb14b460102634d51ecf410dfc14c6f812797e0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b9e1f715a0cb17a3a09ac2a020b4122e6e27e5f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/8233f4b703442101a661af54fb9158fcef3a6ce0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2d6586fafbe7669685ad3711629897c70c82aaf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/baf81894340a509b2abc899e205e8084d037b845" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/b/cb181df8e285b33a61a4c52d49c1a5cdb821c204" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOPurchases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOReviews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOPurchases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOReviews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLListItemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLListItemsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLListReviewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLListReviewsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Constantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLListItems.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLListItems.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/hibernateDAO/HibernateDAOItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/hibernateDAO/HibernateDAOItems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/hibernateDAO/HibernateDAOPurchases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/hibernateDAO/HibernateDAOPurchases.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/hibernateDAO/HibernateDAOReviews.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/hibernateDAO/HibernateDAOReviews.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/interfaces/DAOPurchases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/interfaces/DAOPurchases.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/interfaces/DAOReviews.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/interfaces/DAOReviews.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/items/FXMLListItemsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/items/FXMLListItemsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/items/FXMLListItems.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/items/FXMLListItems.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Review.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/Constantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Constantes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLListReview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLListReview.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,6 +226,8 @@
       <workItem from="1642698137654" duration="861000" />
       <workItem from="1642699291121" duration="14888000" />
       <workItem from="1642717806313" duration="2274000" />
+      <workItem from="1642745853593" duration="42000" />
+      <workItem from="1642858607630" duration="4650000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -443,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642623014356</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="jhghjglkjjk">
+      <created>1642745884446</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1642745884446</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +463,6 @@
       <path value="$USER_HOME$/git" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="lectura hecha y escritura a medias" />
     <MESSAGE value="lectura hecha y escritura, falta filtrar los ids y que añada a la lista de la ventana add" />
     <MESSAGE value="terminado añadir items, borrar items,escribir y leer del fichero" />
     <MESSAGE value="arreglos varios" />
@@ -499,7 +487,8 @@
     <MESSAGE value="error delete" />
     <MESSAGE value="faltan list items y list reviews" />
     <MESSAGE value="faltan list items y list reviews 23" />
-    <option name="LAST_COMMIT_MESSAGE" value="faltan list items y list reviews 23" />
+    <MESSAGE value="jhghjglkjjk" />
+    <option name="LAST_COMMIT_MESSAGE" value="jhghjglkjjk" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

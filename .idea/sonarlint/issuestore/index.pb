@@ -89,5 +89,9 @@ Q
 !src/main/java/model/Customer.java,d\8\d809aaf69069b4e367322db0008755f08edcc9a2
 n
 >src/main/java/fx/controllers/items/FXMLFindItemController.java,3\c\3c09ec9998d52597a7fcb0fad67fc6d9fd8b3ac7
-w
-Gsrc/main/java/fx/controllers/purchases/FXMLListPurchasesController.java,5\2\525c3dd01273861f6a67de140e8439cdf750eb3e
+Z
+*src/main/java/dao/interfaces/DAOItems.java,9\b\9bb14b460102634d51ecf410dfc14c6f812797e0
+e
+5src/main/java/dao/hibernateDAO/HibernateDAOItems.java,3\1\3196ee92f8fd79345bd92ceb409925e7f069b2f2
+f
+6src/main/java/fx/controllers/FXMLModalInfoReviews.java,5\6\56ac29d4543bbbd636a8708818fe8357322d414c

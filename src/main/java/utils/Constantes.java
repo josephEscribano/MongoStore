@@ -50,4 +50,5 @@ public class Constantes {
     public static final String CONNECTION_ERROR = "connection error";
     public static final String ERROR_PANTALLA = "the screen could not be loaded";
     public static final String MENSAJE_ORDENACION = "please, select a type of sorting ";
+    public static final String PLEASE_SELECT_A_RAITING = "Please,select a raiting";
 }
