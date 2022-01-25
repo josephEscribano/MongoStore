@@ -5,24 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="jhghjglkjjk">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/8233f4b703442101a661af54fb9158fcef3a6ce0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2d6586fafbe7669685ad3711629897c70c82aaf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/baf81894340a509b2abc899e205e8084d037b845" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/b/cb181df8e285b33a61a4c52d49c1a5cdb821c204" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2022_16_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2022_16_37__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_01_2022_17_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_01_2022_17_16__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_01_2022_17_18__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_01_2022_17_18__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/hibernateDAO/HibernateDAOReviews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/interfaces/DAOReviews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLListReviewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLListReviewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Constantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLListReview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLListReview.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,6 +218,7 @@
       <workItem from="1642717806313" duration="2274000" />
       <workItem from="1642745853593" duration="42000" />
       <workItem from="1642858607630" duration="4650000" />
+      <workItem from="1643114809841" duration="1835000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
