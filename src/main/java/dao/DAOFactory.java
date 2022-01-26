@@ -1,6 +1,5 @@
 package dao;
 
-import dao.hibernateDAO.*;
 import dao.interfaces.*;
 
 import java.io.IOException;
