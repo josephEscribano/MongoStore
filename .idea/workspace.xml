@@ -5,25 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config/store-properties.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/configuration/ConfigYaml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.len" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values.at" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat.values.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat_i" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/entities/entities.dat_i.len" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/87876507-f3d6-4378-9e5d-5cd20e0774f9/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/mongoDAO/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/users.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/mongoDAO/ReviewDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mongoDAO/ReviewDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/store-properties.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/store-properties.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/configuration/ConfigYaml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/configuration/ConfigYaml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/mongoDAO/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mongoDAO/ItemDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +102,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="main.MainFX" />
-      <module name="HibernateStore" />
+      <module name="PrimerJavaFX" />
       <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
@@ -233,7 +220,8 @@
       <workItem from="1642858607630" duration="4650000" />
       <workItem from="1643114809841" duration="1885000" />
       <workItem from="1643197836910" duration="2414000" />
-      <workItem from="1643275134986" duration="2563000" />
+      <workItem from="1643275134986" duration="2765000" />
+      <workItem from="1643629952091" duration="5000000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -452,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643200164781</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="añadido config">
+      <created>1643278084499</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1643278084499</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +478,6 @@
       <path value="$USER_HOME$/git" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="arreglos varios" />
     <MESSAGE value="error con el delete" />
     <MESSAGE value="Todas las funcionalidades correctas" />
     <MESSAGE value="funcionalidad customer añadir,buscar por id y lista customers hecha" />
@@ -508,7 +502,8 @@
     <MESSAGE value="jhghjglkjjk" />
     <MESSAGE value="principio" />
     <MESSAGE value="cosas quitadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="cosas quitadas" />
+    <MESSAGE value="añadido config" />
+    <option name="LAST_COMMIT_MESSAGE" value="añadido config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

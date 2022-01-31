@@ -1,6 +1,7 @@
 package dao;
 
 import dao.interfaces.*;
+import dao.mongoDAO.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -35,7 +36,7 @@ public class DAOFactory {
         DAOItems dao = null;
         sourceItems = daoProps.getProperty("daoItemsHibernate");
         if (sourceItems.equals("HibernateDAOItems")){
-            dao = new HibernateDAOItems();
+            dao = new ItemDAO();
         }
 
 
@@ -47,7 +48,7 @@ public class DAOFactory {
         DAOCustomers dao = null;
         sourceCustomers = daoProps.getProperty("daoCustomersHibernate");
         if (sourceCustomers.equals("HibernateDAOCustomers")){
-            dao = new HibernateDAOCustomers();
+            dao = new CustomerDAO();
         }
 
         return dao;
@@ -59,7 +60,7 @@ public class DAOFactory {
         DAOPurchases dao = null;
         sourcesPurchses = daoProps.getProperty("daoPurchasesHibernate");
         if (sourcesPurchses.equals("HibernateDAOPurchases")){
-            dao = new HibernateDAOPurchases();
+            dao = new PurchaseDAO();
         }
 
         return dao;
@@ -70,7 +71,7 @@ public class DAOFactory {
         DAOReviews dao = null;
         sourcesPurchses = daoProps.getProperty("daoReviewsHibernate");
         if (sourcesPurchses.equals("HibernateDAOReviews")){
-            dao = new HibernateDAOReviews();
+            dao = new ReviewDAO();
         }
 
         return dao;
@@ -81,7 +82,7 @@ public class DAOFactory {
         DAOUsers dao = null;
         sourcesPurchses = daoProps.getProperty("daoUsersHibernate");
         if (sourcesPurchses.equals("HibernateDAOUsers")){
-            dao = new HibernateDAOUsers();
+            dao = new UserDAO();
         }
 
         return dao;

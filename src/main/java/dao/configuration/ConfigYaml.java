@@ -6,43 +6,47 @@
 package dao.configuration;
 
 import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
 import org.yaml.snakeyaml.Yaml;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Getter
+@Setter
+@Log4j2
 public class ConfigYaml {
-    
     private String ruta;
     private String database;
-    
-    private static ConfigYaml config;
 
-    private ConfigYaml() {
-        
-    }
-    
-    public static ConfigYaml getInstance() {
-        if (config == null) {
-            try {
-                Yaml yaml = new Yaml();
-                InputStream in = Files.newInputStream(Paths.get("config/store-properties.yml"));
-                config = (ConfigYaml) yaml.loadAs(in, ConfigYaml.class);
+    public ConfigYaml() {
+        try {
+            Yaml yaml = new Yaml();
+            Iterable<Object> it;
 
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(ConfigYaml.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-                Logger.getLogger(ConfigYaml.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            it = yaml.loadAll(new FileInputStream("config/store-properties.yml"));
+
+            Map<String, String> m = (Map) it.iterator().next();
+
+            this.ruta = m.get("database");
+            this.database = m.get("databaseName");
+
+
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
         }
-        return config;
     }
+
+    
+
 
 
 
