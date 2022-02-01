@@ -8,6 +8,7 @@ import com.mongodb.client.MongoDatabase;
 import dao.configuration.ConfigYaml;
 import dao.interfaces.DAOItems;
 import model.Item;
+import model.converters.ItemConverter;
 import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
@@ -31,8 +32,14 @@ public class ItemDAO implements DAOItems {
     }
 
     @Override
-    public boolean save(Item t) {
-        return false;
+    public boolean save(Item item) {
+        boolean confirmacion = true;
+        ItemConverter itemConverter = new ItemConverter();
+        Document document = itemConverter.convertItemDocument(item);
+        MongoCollection<Document> db = load().getCollection("Items");
+        db.insertOne(document);
+
+        return confirmacion;
     }
 
     @Override
