@@ -5,34 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/converters/ItemConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/mongoDAO/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/mongoDAO/ItemDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerUserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLfindCustomerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLFindItemController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLUpdateItemController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDatePurchasesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLListPurchasesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLUpdatePurchasesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLListReviewsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLUpdateReviewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLfindReviewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/customers/FXMLUpdateCustomerUser.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/customers/FXMLfindCustomer.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLFindItem.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLUpdateItems.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLDatePurchases.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLListPurchases.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLUpdatePurchases.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLListReview.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLUpdateReview.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLfindReview.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +217,7 @@
       <workItem from="1643197836910" duration="2414000" />
       <workItem from="1643275134986" duration="2765000" />
       <workItem from="1643629952091" duration="5179000" />
-      <workItem from="1643715203138" duration="4701000" />
+      <workItem from="1643715203138" duration="4927000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -477,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643635172228</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="he insertado items :)">
+      <created>1643721476175</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1643721476175</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +488,6 @@
       <path value="$USER_HOME$/git" />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Todas las funcionalidades correctas" />
     <MESSAGE value="funcionalidad customer añadir,buscar por id y lista customers hecha" />
     <MESSAGE value="Primera conexion a la base de datos" />
     <MESSAGE value="errores arreglados" />
@@ -533,7 +512,8 @@
     <MESSAGE value="cosas quitadas" />
     <MESSAGE value="añadido config" />
     <MESSAGE value="prueba getAll hechas 30/01/2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="prueba getAll hechas 30/01/2022" />
+    <MESSAGE value="he insertado items :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="he insertado items :)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

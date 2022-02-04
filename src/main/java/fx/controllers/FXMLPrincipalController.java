@@ -32,7 +32,7 @@ import javax.xml.parsers.ParserConfigurationException;
  * @author Laura
  */
 public class FXMLPrincipalController implements Initializable {
- 
+
     @FXML
     public MenuItem customerAdd;
     @FXML
